@@ -9,8 +9,8 @@ public:
                 return false;
             rev = rev*10+ x2%10;
             x2/=10;
+            cout<<INT_MAX;
         }
         return (rev==x)?true:false;
     }
 };
-// Title: Palindrome Number
