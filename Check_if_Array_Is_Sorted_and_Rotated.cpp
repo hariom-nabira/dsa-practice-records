@@ -3,15 +3,11 @@ public:
     bool check(vector<int>& nums) {
         bool rotated = false;
         for(int i=0;i<nums.size()-1;i++){
-            if(!rotated && nums[i]>nums[i+1]){
+            if(!rotated && nums[i]>nums[i+1])
                 rotated=true;
-                if(nums[i+1]>nums[0])
-                    return false;
-            }
             else if(rotated && !(nums[i]<=nums[i+1] && nums[i+1]<=nums[0]))
                 return false;
         }
         return true;
     }
 };
-// Title: Check if Array Is Sorted and Rotated
