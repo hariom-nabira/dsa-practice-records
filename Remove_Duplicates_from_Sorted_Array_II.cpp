@@ -1,23 +1,17 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int n=nums.size();
-        if(n<=2) return n;
-        int left=1,right=2,count=2;
-        while(right<n){
-            if(nums[right]!=nums[left]){
-                count++;
-                nums[++left]=nums[right++];
-            }else{
-                if(nums[left-1]!=nums[left]){
-                    count++;
-                    nums[++left]=nums[right];
+        int last=0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]!=nums[i+2]){
+                nums[last] = nums[i];
+                last++;
+                if(nums[i]==nums[i+1]){
+                    nums[last] = nums[i];
+                    last++;i++;
                 }
-                right++;
             }
         }
-        cout<<count<<endl;
-        return count;
+        return last;
     }
 };
-// Title: Remove Duplicates from Sorted Array II
