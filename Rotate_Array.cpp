@@ -3,7 +3,7 @@ public:
     void rotate(vector<int>& nums, int k) {
         int temp1,temp2, n=nums.size(),count=0,i=0,startIndex=0
         ;
-        if(!k || k>=n) return;
+        if(!k || k==n) return;
         temp1 = nums[i];
         while(count!=n){
             if(i==startIndex){
@@ -18,4 +18,3 @@ public:
         }
     }
 };
-// Title: Rotate Array
