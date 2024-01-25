@@ -11,10 +11,9 @@ public:
             count++;
             i=(i+k)%n;
             if(n%k==0 && count%2==0){
-                i=(i+1)%k;
+                i++;
                 temp1=nums[i];
             }
         }
     }
 };
-// Title: Rotate Array
