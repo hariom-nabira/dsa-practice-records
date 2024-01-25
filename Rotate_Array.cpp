@@ -10,11 +10,10 @@ public:
             nums[(i+k)%n]=temp2;
             count++;
             i=(i+k)%n;
-            if(n%k==0 && count%2==0 && k!=1){
+            if(n%k==0 && count%2==0){
                 i=(i+1)%k;
                 temp1=nums[i];
             }
         }
     }
 };
-// Title: Rotate Array
