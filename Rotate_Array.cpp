@@ -1,7 +1,6 @@
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
-        if(!k) return;
         int temp1,temp2, n=nums.size(),count=0,i=0;
         temp1 = nums[i];
         while(count!=n){
@@ -17,4 +16,3 @@ public:
         }
     }
 };
-// Title: Rotate Array
