@@ -3,7 +3,7 @@ public:
     void moveZeroes(vector<int>& nums) {
         int n=nums.size(),lastIndex=0,count=0;
         for(int i=0;i<n;i++){
-            if(nums[i]!=0){
+            if(nums[i]!=0 && i!=lastIndex){
                 nums[lastIndex] = nums[i];
                 lastIndex++;
             }else count++;
@@ -12,4 +12,3 @@ public:
             nums[i]=0;
     }
 };
-// Title: Move Zeroes
