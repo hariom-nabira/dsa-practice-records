@@ -8,14 +8,8 @@ public:
     int findPathsH(int m, int n, int maxMove, int startRow, int startColumn,int currMov,vector<vector<vector<int>>> &dp){
         if(currMov>maxMove) return 0;
         if(startRow<0 || startRow>=m || startColumn<0 || startColumn>=n) return 1;
-        if(dp[currMov][startRow][startColumn] == -1){
-            int  p = findPathsH(m,n,maxMove,startRow-1,startColumn,currMov+1,dp)%mod;
-            p = (p + findPathsH(m,n,maxMove,startRow+1,startColumn,currMov+1,dp))%mod; 
-            p = (p + findPathsH(m,n,maxMove,startRow,startColumn-1,currMov+1,dp))%mod;
-            p = (p + findPathsH(m,n,maxMove,startRow,startColumn+1,currMov+1,dp))%mod;
-            dp[currMov][startRow][startColumn] = p;
-    }
+        if(dp[currMov][startRow][startColumn] == -1)
+            dp[currMov][startRow][startColumn] = (findPathsH(m,n,maxMove,startRow-1,startColumn,currMov+1,dp)%mod + findPathsH(m,n,maxMove,startRow+1,startColumn,currMov+1,dp)%mod + findPathsH(m,n,maxMove,startRow,startColumn-1,currMov+1,dp)%mod + findPathsH(m,n,maxMove,startRow,startColumn+1,currMov+1,dp)%mod )%mod;
         return dp[currMov][startRow][startColumn];
     }
 };
-// Title: Out of Boundary Paths
