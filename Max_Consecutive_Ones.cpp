@@ -14,3 +14,4 @@ public:
         return mx;
     }
 };
+// Title: Max Consecutive Ones
