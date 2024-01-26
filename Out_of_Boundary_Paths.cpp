@@ -9,3 +9,4 @@ public:
         return findPathsH(m,n,maxMove,startRow-1,startColumn,currMov+1) + findPathsH(m,n,maxMove,startRow+1,startColumn,currMov+1) + findPathsH(m,n,maxMove,startRow,startColumn-1,currMov+1) + findPathsH(m,n,maxMove,startRow,startColumn+1,currMov+1);
     }
 };
+// Title: Out of Boundary Paths
