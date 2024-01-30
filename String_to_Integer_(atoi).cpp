@@ -5,7 +5,7 @@ public:
         bool flag=false;
         for(char ch : s){
             if(ch==' ' && !flag) continue;
-            if(ch=='+' && !flag) flag=true;
+            if(ch=='+' && !flag) continue;
             else if(ch=='-' && !flag){
                 mul*=-1;
                 flag=true;
@@ -22,4 +22,3 @@ public:
         return ans;
     }
 };
-// Title: String to Integer (atoi)
