@@ -2,12 +2,6 @@ class Solution {
 public:
     double myPow(double x, int n) {
         if(n==1) return x;
-        if(n==-1) return 1.0/x;
-        double res = myPow(x,n/2);
-        if(n&1)
-            return x*res*res;
-        else
-            return res*res;
+        return (n>0)? x*pow(x,n-1) : 1.0/(x*pow(x,-1*(n+1)));
     }
 };
-// Title: Pow(x, n)
