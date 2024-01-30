@@ -5,3 +5,4 @@ public:
         return (n>0)? x*pow(x,n-1) : 1.0/(x*pow(x,-1*(n+1)));
     }
 };
+// Title: Pow(x, n)
