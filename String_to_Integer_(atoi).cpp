@@ -10,10 +10,6 @@ public:
                 flag=true;
             }
             else if(ch>='0' && ch<='9'){
-                if(ans>0 && ans> (INT_MAX-(ch-'0')*10/mul)/10)
-                    return INT_MAX;
-                if(ans<0 && ans< (INT_MIN-(ch-'0')*10/mul)/10)
-                    return INT_MIN;
                 ans = ans*10 + (ch-'0')*10/mul;
                 flag=true;
             }else break;
@@ -21,4 +17,3 @@ public:
         return ans;
     }
 };
-// Title: String to Integer (atoi)
