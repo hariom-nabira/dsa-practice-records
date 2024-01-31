@@ -10,3 +10,4 @@ public:
             return res*res;
     }
 };
+// Title: Pow(x, n)
