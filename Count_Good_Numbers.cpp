@@ -10,3 +10,4 @@ public:
         return (int)(1LL*4*(helper(curr+1,!even,n))%M)%M;
     }
 };
+// Title: Count Good Numbers
