@@ -5,9 +5,8 @@ public:
         if(n==-1) return 1.0/x;
         double res = myPow(x,n/2);
         if(n&1)
-            return (n>0)? x*res*res : (1.0/x)*res*res;
+            return x*res*res;
         else
             return res*res;
     }
 };
-// Title: Pow(x, n)
