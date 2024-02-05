@@ -13,3 +13,4 @@ public:
         node->next = node->next->next;
     }
 };
+// Title: Delete Node in a Linked List
