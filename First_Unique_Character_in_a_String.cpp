@@ -11,3 +11,4 @@ public:
         return -1;
     }
 };
+// Title: First Unique Character in a String
