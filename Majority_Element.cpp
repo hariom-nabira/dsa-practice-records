@@ -11,3 +11,4 @@ public:
         return candidate;
     }
 };
+// Title: Majority Element
