@@ -13,9 +13,8 @@ public:
             return;
         }
         int j=i;
-        while(j<nums.size() && nums[j]>nums[i-1]) j++;
+        while(nums[j]>nums[i-1]) j++;
         mySwap(nums[i-1],nums[j-1]);
         sort(nums.begin()+i,nums.end());
     }
 };
-// Title: Next Permutation
