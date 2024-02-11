@@ -11,15 +11,10 @@ public:
                 fives--;
             }else{
                 if(fives==0 || (tens==0 && fives<3)) return false;
-                if(tens!=0){
-                    tens--;
-                    fives--;
-                }else{
-                    fives-=3;
-                }
+                tens--;
+                fives--;
             }
         }
         return true;
     }
 };
-// Title: Lemonade Change
