@@ -1,22 +1,28 @@
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
-        int cand1, cand2, c1=0, c2=0, n=nums.size();
-        for(int i=0; i<n; i++){
-            if(c1==0) cand1=nums[i];
-            else if(c2==0) cand2=nums[i];
-
-            if(nums[i] == cand1) c1++;
-            else if(nums[i] == cand2) c2++;
+        int n=nums.size();
+        if(n==1) return {nums[0]};
+        vector<int> candidates(2,INT_MAX);
+        int count1=0,count2=0;
+        for(int i=0;i<n;i++){
+            if(count1==0 && nums[i]!=candidates[1]) candidates[0]=nums[i];
+            else if(count2==0 && nums[i]!=candidates[0]) candidates[1]=nums[i];
+            
+            if(nums[i]==candidates[0]) count1++;
+            else if(nums[i]==candidates[1]) count2++;
             else{
-                c1--;
-                c2--;
+                count1--;
+                count2--;
             }
         }
-        vector<int> ans;
-        if(c1 > n/3) ans.push_back(cand1);
-        if(c2 > n/3) ans.push_back(cand2);
-        return ans;
+        count1=0;count2=0;
+        for(int it:nums){
+            if(it==candidates[0]) count1++;
+            if(it==candidates[1]) count2++;
+        }
+        if(count1 <= n/3) candidates.erase(candidates.begin()+0);
+        if(count2 <= n/3) candidates.erase(candidates.end()-1);
+        return candidates;
     }
 };
-// Title: Majority Element II
