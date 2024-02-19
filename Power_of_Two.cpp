@@ -5,3 +5,4 @@ public:
         return !(n&(n-1));
     }
 };
+// Title: Power of Two
