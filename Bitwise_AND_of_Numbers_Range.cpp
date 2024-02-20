@@ -12,15 +12,12 @@ public:
         int ans = (count>-1)? (1<<count) : 0;
         int temp = leftc ^ rightc;
         while(count >= 0){
-            cout<<temp<<" "<<count<<" "<<(1<<count)<<" ";
             if ((temp & (1<<count))) {
                 break;
             }
-            ans = ans | (leftc&(1<<count));
-            cout<<ans<<endl;
+            ans = ans | (1<<count);
             count--;
         }
         return ans;
     }
 };
-// Title: Bitwise AND of Numbers Range
