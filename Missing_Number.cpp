@@ -6,4 +6,3 @@ public:
         return (n*(n+1))/2 - sum; 
     }
 };
-// Title: Missing Number
