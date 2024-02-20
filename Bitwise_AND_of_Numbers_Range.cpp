@@ -10,15 +10,12 @@ public:
         if(!left && right) return 0;
         if(!right && left) return 0;
         int ans = (count>-1)? (1<<count) : 0;
-        int temp = leftc ^ rightc;
-        while(count >= 0){
-            if ((temp & (1<<count))) {
-                break;
-            }
-            ans = ans | (1<<count);
-            count--;
+        int temp = leftc | rightc;
+        while(count >=0){
+            if (!(temp & (1<<count))) {
+                ans |= (1<<count);
+            }else break;
         }
         return ans;
     }
 };
-// Title: Bitwise AND of Numbers Range
