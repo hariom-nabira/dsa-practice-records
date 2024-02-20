@@ -12,33 +12,28 @@ public:
         for(vector<int> &v : meetings) pq.push({v[0],v[1]});
         while(!pq.empty()){
             bool flag = true;
-            int minBooked = bookedTill[0], minBookedRoom = 0, start=pq.top().first, end=pq.top().second;
             for(int i=0;i<n;i++){
-                if(bookedTill[i] <= start){
-                    bookedTill[i] = end;
+                if(bookedTill[i] <= pq.top().first){
+                    bookedTill[i] = pq.top().second;
                     meets[i]++;
                     flag=false;
                     break;
                 }
-                if(bookedTill[i] < minBooked){
-                    minBooked = bookedTill[i];
-                    minBookedRoom = i;
-                }
             }
             if(flag){
-                bookedTill[minBookedRoom] += end - start;
-                meets[minBookedRoom]++;
+                int mn = bookedTill[0];
+                for(int ele: bookedTill) mn = min(mn,ele);
+                pq.push({mn, mn + pq.top().second - pq.top().first});
             }
             pq.pop();
         }
         int mx=meets[0], ans=0;
-        for(int i=0;i<n;i++){
-            if(meets[i] > mx){
-                mx = meets[i];
-                ans = i;
+        for(int i=1;i<n;i++){
+            if(meets[i]>mx){
+                mx=meets[i];
+                ans=i;
             }
         }
         return ans;
     }
 };
-// Title: Meeting Rooms III
