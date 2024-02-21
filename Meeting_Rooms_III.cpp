@@ -1,11 +1,18 @@
+struct myCustomComp{
+    bool operator()(pair<int,int> &a, pair<int,int> &b){
+        return a.first > b.first;
+    }
+};
+
 class Solution {
 public:
     int mostBooked(int n, vector<vector<int>>& meetings) {
-        vector<long long int> bookedTill(n,-1), meets(n);
-        sort(meetings.begin(),meetings.end());
-        for(auto &meet:meetings){
+        vector<int> bookedTill(n,-1), meets(n);
+        priority_queue<pair<int,int>, vector<pair<int,int>>, myCustomComp> pq;
+        for(vector<int> &v : meetings) pq.push({v[0],v[1]});
+        while(!pq.empty()){
             bool flag = true;
-            int minBooked = bookedTill[0], minBookedRoom = 0, start=meet[0], end=meet[1];
+            int minBooked = bookedTill[0], minBookedRoom = 0, start=pq.top().first, end=pq.top().second;
             for(int i=0;i<n;i++){
                 if(bookedTill[i] <= start){
                     bookedTill[i] = end;
@@ -22,6 +29,7 @@ public:
                 bookedTill[minBookedRoom] += end - start;
                 meets[minBookedRoom]++;
             }
+            pq.pop();
         }
         int mx=meets[0], ans=0;
         for(int i=0;i<n;i++){
@@ -33,4 +41,3 @@ public:
         return ans;
     }
 };
-// Title: Meeting Rooms III
