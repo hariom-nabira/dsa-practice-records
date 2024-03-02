@@ -6,8 +6,9 @@ public:
         vector<int> ans;
         for(int i=0;i<n;i++){
             if(nums[i]>=0){
+                ans.push_back(nums[i]*nums[i]);
                 left=i-1;
-                right=i;
+                right=i+1;
                 break;
             }
         }
@@ -31,4 +32,3 @@ public:
         return ans;
     }
 };
-// Title: Squares of a Sorted Array
