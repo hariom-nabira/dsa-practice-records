@@ -22,3 +22,4 @@ public:
         return bestLength;
     }
 };
+// Title: Frequency of the Most Frequent Element
