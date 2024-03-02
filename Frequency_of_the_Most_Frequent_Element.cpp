@@ -25,3 +25,4 @@ public:
         return n-left;
     }
 };
+// Title: Frequency of the Most Frequent Element
