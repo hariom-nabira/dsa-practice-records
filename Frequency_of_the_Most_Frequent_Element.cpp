@@ -13,7 +13,7 @@ public:
         for(int right=0;right<n;right++){ //we consider each element as target once
             target=nums[right];
             currSum+=nums[right];
-            while(1LL*(right-left+1)*target - currSum > k){ //if total operation is more than k then we need to let go of farthest(i.e left) element
+            while((right-left+1)*target*1LL-currSum > k){ //if total operation is more than k then we need to let go of farthest(i.e left) element
                 currSum-=nums[left];
                 left++;
             }
@@ -22,4 +22,3 @@ public:
         return bestLength;
     }
 };
-// Title: Frequency of the Most Frequent Element
