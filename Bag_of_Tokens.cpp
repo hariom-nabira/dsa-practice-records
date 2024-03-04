@@ -5,7 +5,6 @@ public:
         int score=0,left=0,right=tokens.size()-1,maxScore = 0;
         while(left<=right){
             if(tokens[left] > power){
-                if(score==0) break;
                 power+=tokens[right];
                 score--;
                 right--;
@@ -19,4 +18,3 @@ public:
         return maxScore;
     }
 };
-// Title: Bag of Tokens
