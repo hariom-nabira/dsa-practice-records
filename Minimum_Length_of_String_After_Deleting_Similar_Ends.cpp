@@ -2,16 +2,19 @@ class Solution {
 public:
     int minimumLength(string s) {
         int n = s.size();
-        int left=0, right = n-1;
-        char ch;
-        while(left<right && s[left]==s[right]){
-            ch = s[left];
-            while(s[left]==ch && left<=right)
-                left++;
-            while(s[right]==ch && right>=left)
-                right--;
+        int left=0, right = n-1, tempIndex;
+        while(left<=right){
+            if(s[left]!=s[right] || left==right)
+                return right-left+1;
+            tempIndex=left;
+            while(s[tempIndex]==s[left] && tempIndex < n-1)
+                tempIndex++;
+            left=tempIndex;
+            tempIndex=right;
+            while(s[tempIndex]==s[right] && tempIndex > 0)
+                tempIndex--;
+            right=tempIndex;
         }
-        return right-left+1;
+        return 0;
     }
 };
-// Title: Minimum Length of String After Deleting Similar Ends
