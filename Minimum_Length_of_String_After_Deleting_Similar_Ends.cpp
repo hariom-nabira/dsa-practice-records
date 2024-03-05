@@ -4,7 +4,7 @@ public:
         int n = s.size();
         int left=0, right = n-1, tempIndex;
         while(left<=right){
-            if(s[left]!=s[right] || left==right)
+            if(s[left]!=s[right])
                 return right-left+1;
             tempIndex=left;
             while(s[tempIndex]==s[left] && tempIndex < n-1)
@@ -18,4 +18,3 @@ public:
         return 0;
     }
 };
-// Title: Minimum Length of String After Deleting Similar Ends
