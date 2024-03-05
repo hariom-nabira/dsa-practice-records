@@ -4,3 +4,4 @@ public:
         return haystack.find(needle);
     }
 };
+// Title: Find the Index of the First Occurrence in a String
