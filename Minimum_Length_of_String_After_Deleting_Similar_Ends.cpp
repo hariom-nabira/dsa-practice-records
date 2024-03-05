@@ -14,3 +14,4 @@ public:
         return right-left+1;
     }
 };
+// Title: Minimum Length of String After Deleting Similar Ends
