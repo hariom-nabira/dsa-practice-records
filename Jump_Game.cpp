@@ -1,7 +1,6 @@
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
-        if(nums[0]==0) return false;
         for(int i=1;i<nums.size()-1;i++){
             if(nums[i]==0 && nums[i-1]<=i)
                 return false;
@@ -10,4 +9,3 @@ public:
         return true;
     }
 };
-// Title: Jump Game
