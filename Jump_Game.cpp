@@ -1,12 +1,18 @@
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
-        for(int i=1;i<nums.size()-1;i++){
-            if(nums[i]==0 && nums[i-1]<=i)
-                return false;
-            nums[i] = max(nums[i-1], i+nums[i]);
+        int i=nums.size()-2;
+        while(i>=0){
+            if(nums[i]==0){
+                int j=i;
+                i--;
+                while(i>=0 && nums[i] <= j-i){
+                    i--;
+                }
+                if(i==-1) return false;
+            }
+            i--;
         }
         return true;
     }
 };
-// Title: Jump Game
