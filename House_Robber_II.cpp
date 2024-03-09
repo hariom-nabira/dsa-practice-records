@@ -19,10 +19,9 @@ public:
     int helper(vector<int>& nums,int i,vector<int>& dp,int choice){
         if(choice==1 && i<0) return 0;
         if(choice==2 && i<1) return 0;
-        if(i==0 || choice==2&&i==1) return nums[i];
+        if(i==0 || i==1) return nums[i];
         if(dp[i]==-1)
             dp[i] =  max(nums[i]+helper(nums,i-2,dp,choice) , helper(nums,i-1,dp,choice));
         return dp[i];
     }
 };
-// Title: House Robber II
