@@ -19,3 +19,4 @@ public:
             return searchBST(root->right,val);
     }
 };
+// Title: Search in a Binary Search Tree
