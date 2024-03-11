@@ -28,16 +28,15 @@ public:
                     matrix[i][j] = 0;
             }
         }
-        if(flagCol){
+        if(flagRow){
             for(int i=0;i<n;i++){
                 matrix[i][0] = 0;
             }
         }
-        if(flagRow){
+        if(flagCol){
             for(int j=0;j<m;j++){
                 matrix[0][j] = 0;
             }
         }
     }
 };
-// Title: Set Matrix Zeroes
