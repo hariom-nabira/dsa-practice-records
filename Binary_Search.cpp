@@ -12,3 +12,4 @@ public:
         return -1;
     }
 };
+// Title: Binary Search
