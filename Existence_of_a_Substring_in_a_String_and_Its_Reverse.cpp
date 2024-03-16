@@ -3,7 +3,7 @@ public:
     bool isSubstringPresent(string s) {
         if(s.size()<2) return false;
         set<string> s1,s2;
-        for(int i=0;i<s.size()-1;i++){
+        for(int i=0;i<s.size()-2;i++){
             s1.insert(s.substr(i,2));
         }
         for(int j=s.size()-1;j>0;j--){
@@ -12,14 +12,9 @@ public:
             str += s[j-1];
             s2.insert(str);
         }
-        for(auto str:s1) cout<<str<<"....";
-        cout<<endl;
-        for(auto str:s2) cout<<str<<"....";
-        cout<<endl;
         for(auto str:s1)
             if(s2.contains(str))
                return true;
         return false;
     }
 };
-// Title: Existence of a Substring in a String and Its Reverse
