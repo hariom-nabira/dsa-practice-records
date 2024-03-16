@@ -1,7 +1,7 @@
 class Solution {
 public:
     long long countSubstrings(string s, char c) {
-        long long count=0,ans=0;
+        int count=0,ans=0;
         for(auto ch:s){
             if(ch==c){
                 count++;
@@ -11,4 +11,3 @@ public:
         return ans;
     }
 };
-// Title: Count Substrings Starting and Ending with Given Character
