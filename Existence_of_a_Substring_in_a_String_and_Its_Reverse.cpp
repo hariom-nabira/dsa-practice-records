@@ -17,3 +17,4 @@ public:
         return false;
     }
 };
+// Title: Existence of a Substring in a String and Its Reverse
