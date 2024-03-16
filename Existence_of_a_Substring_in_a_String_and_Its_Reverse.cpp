@@ -12,10 +12,13 @@ public:
             str += s[j-1];
             s2.insert(str);
         }
+        for(auto str:s1) cout<<str<<"....";
+        cout<<endl;
+        for(auto str:s2) cout<<str<<"....";
+        cout<<endl;
         for(auto str:s1)
             if(s2.contains(str))
                return true;
         return false;
     }
 };
-// Title: Existence of a Substring in a String and Its Reverse
