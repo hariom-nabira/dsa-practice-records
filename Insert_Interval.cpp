@@ -14,7 +14,8 @@ public:
             return ans;
         }
         int startTime = min(intervals[i][0],newInterval[0]);
-        int bookedTill = newInterval[1];
+        int bookedTill = max(intervals[i][1],newInterval[1]);
+        i++;
 
         while(i<n && bookedTill >= intervals[i][0]){
             bookedTill = max(intervals[i][1],bookedTill);
@@ -28,4 +29,3 @@ public:
         return ans;
     }
 };
-// Title: Insert Interval
