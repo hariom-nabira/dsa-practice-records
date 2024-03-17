@@ -15,7 +15,7 @@ public:
         int bookedTill = max(intervals[i][1],newInterval[1]);
         i++;
 
-        while(i<intervals.size() && bookedTill >= intervals[i][0]){
+        while(bookedTill >= intervals[i][0]){
             bookedTill = max(intervals[i][1],bookedTill);
             i++;
         }
@@ -27,4 +27,3 @@ public:
         return ans;
     }
 };
-// Title: Insert Interval
