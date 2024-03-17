@@ -2,9 +2,6 @@ class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
         vector<vector<int>> ans;
-        if(intervals.size()==0){
-            return {newInterval};
-        }
         int i=0;
         while(intervals[i][1] < newInterval[0]){
             ans.push_back(intervals[i]);
@@ -27,4 +24,3 @@ public:
         return ans;
     }
 };
-// Title: Insert Interval
