@@ -13,11 +13,10 @@ public:
                 arrows++;
                 end = points[i][1];
             }
-            else
-                end = min(end, points[i][1]);
+            //else
+            //     end = min(end, points[i][1]);
         }
 
         return arrows;
     }
 };
-// Title: Minimum Number of Arrows to Burst Balloons
