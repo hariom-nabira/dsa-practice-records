@@ -2,7 +2,7 @@ class Solution {
 public:
     int findMinArrowShots(vector<vector<int>>& points) {
         sort(points.begin(), points.end(), [](auto &a, auto &b) {
-            return a[0] < b[0];
+            return a[1] < b[1];
         });
 
         int arrows = 1;
@@ -20,4 +20,3 @@ public:
         return arrows;
     }
 };
-// Title: Minimum Number of Arrows to Burst Balloons
