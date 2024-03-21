@@ -14,12 +14,14 @@ public:
         return helper(head,&head);
     }
     bool helper(ListNode* head, ListNode** temp){
-        if(head==NULL) return true;
-        if(helper(head->next,temp) && head->val == (*temp)->val){
+        bool flag = true;
+        if(head->next!=NULL)
+            flag = helper(head->next,temp);
+        if(!flag) return flag;
+        if(head->val== (*temp)->val){
             *temp = (*temp)->next;
             return true;
         }else
             return false;
     }
 };
-// Title: Palindrome Linked List
