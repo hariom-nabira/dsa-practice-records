@@ -11,31 +11,14 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        ListNode *slow=head, *fast=head;
-        while(fast && fast->next){
-            slow = slow->next;
-            fast = fast->next->next;
-        }
-        // if(fast)
-        //     slow = slow->next;
-        ListNode *rev = reverseList(slow);
-        while(head && rev){
-            if(head->val != rev->val)
-                return false;
-            head = head->next;
-            rev = rev->next;
-        }
-        return true;
+        return helper(head,&head);
     }
-    ListNode* reverseList(ListNode* head) {
-        ListNode *prev = NULL, *next;
-        while(head){
-            next = head->next;
-            head->next = prev;
-            prev = head;
-            head = next;
-        }
-        return prev;
+    bool helper(ListNode* head, ListNode** temp){
+        if(head==NULL) return true;
+        if(helper(head->next,temp) && head->val == (*temp)->val){
+            *temp = (*temp)->next;
+            return true;
+        }else
+            return false;
     }
 };
-// Title: Palindrome Linked List
