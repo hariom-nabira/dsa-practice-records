@@ -1,3 +1,6 @@
+// chapa for streak
+
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -11,31 +14,42 @@
 class Solution {
 public:
     void reorderList(ListNode* head) {
-        ListNode *slow=head, *fast=head;
+        if(!head || !(head->next)||!(head->next->next))return;
+        //Though code looks complex but it is optimal
+        //I have reused the slow and fast variables(Donot get confused)
+        ListNode * slow=head;
+        ListNode* prev=NULL;
+        ListNode * fast=head;
+        ListNode* temp1=NULL;
         while(fast && fast->next){
-            slow = slow->next;
-            fast = fast->next->next;
+            fast=fast->next->next;
+            ListNode * temp=slow->next;
+            prev=slow;
+            slow=temp;
         }
-        ListNode* rev = reverseList(slow);
-        ListNode *curr = head, *next, *revNext;
-        while(rev->next){
-            next = curr->next;
-            curr->next = rev;
-            revNext = rev->next;
-            rev->next = next;
-            rev = revNext;
-            curr = next;
+        if(fast){
+            temp1=slow->next;
+            slow->next=NULL;
         }
-    }
-    ListNode* reverseList(ListNode* head){
-        ListNode *prev=NULL, *next;
-        while(head){
-            next = head->next;
-            head->next = prev;
-            prev = head;
-            head = next;
+        else{
+            temp1=slow;
+            prev->next=NULL;
         }
-        return prev;
+        prev=NULL;
+        while(temp1){
+            ListNode * temp0=temp1->next;
+            temp1->next=prev;
+            prev=temp1;
+            temp1=temp0;
+        }
+        temp1=prev;
+        slow=head;
+        while(temp1&&slow){
+            fast=slow->next;
+            slow->next=temp1;
+            temp1=temp1->next;
+            slow->next->next=fast;
+            slow=slow->next->next;
+        }
     }
 };
-// Title: Reorder List
