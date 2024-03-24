@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
         ListNode *prev = NULL, *next;
-        while(head){
+        while(head!=nullptr){
             next = head->next;
             head->next = prev;
             prev = head;
@@ -21,4 +21,3 @@ public:
         return prev;
     }
 };
-// Title: Reverse Linked List
