@@ -5,13 +5,14 @@ public:
         do{
             slow = nums[slow];
             fast = nums[nums[fast]];
+            cout<<slow<<">>>>>>>>"<<fast;
         }while(slow!=fast);
         int temp = nums[0];
         while(slow!=temp){
+            cout<<slow<<">>>>>>>>"<<temp;
             slow = nums[slow];
             temp = nums[temp];
         }
         return temp;
     }
 };
-// Title: Find the Duplicate Number
