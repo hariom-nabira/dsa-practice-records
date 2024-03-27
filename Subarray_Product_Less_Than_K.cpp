@@ -8,11 +8,9 @@ public:
             while(prod>=k && i<j){
                 prod /= nums[i++];
             }
-            if(prod<k)
-                count += j-i+1;
+            count += j-i+1;
             j++;
         }
         return count;
     }
 };
-// Title: Subarray Product Less Than K
