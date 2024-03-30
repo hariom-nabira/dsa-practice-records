@@ -12,8 +12,6 @@ public:
                 }
             }
         }
-        if(mn==INT_MAX)return -1;
         return mn;
     }
 };
-// Title: Shortest Subarray With OR at Least K I
