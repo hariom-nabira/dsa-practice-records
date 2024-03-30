@@ -3,8 +3,8 @@ public:
     int minimumLevels(vector<int>& nums) {
         int n = nums.size();
         vector<int> prefix(n), suffix(n);
-        prefix[0] = nums[0]?1:-1;
-        suffix[n-1] = nums[n-1]?1:-1;
+        prefix[0] = nums[0];
+        suffix[n-1] = nums[n-1];
         for(int i=1;i<n;i++){
             int temp = nums[i] ? 1:-1; 
             prefix[i] = prefix[i-1]+temp;
@@ -21,4 +21,3 @@ public:
         return -1;
     }
 };
-// Title: Minimum Levels to Gain More Points
