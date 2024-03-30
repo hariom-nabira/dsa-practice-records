@@ -32,3 +32,4 @@ private:
         return totalCount;
     }
 };
+// Title: Subarrays with K Different Integers
