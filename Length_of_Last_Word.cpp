@@ -1,18 +1,18 @@
-//better implementation of same approach
-
 class Solution {
 public:
     int lengthOfLastWord(string s) {
-        int pos = s.size() - 1;
-        while(pos >= 0 && s[pos] == ' ') pos--;
-
-        int result = 0;
-        while(pos >= 0 && s[pos] != ' ') {
-            pos--;
-            result++;
+        bool flag=false;
+        int count=0;
+        for(int i=s.size()-1;i>=0;i--){
+            if(!flag && s[i]!=' '){
+                flag = true;
+                count++;
+            }
+            else if(flag && s[i]!=' ')
+                count++;
+            else if(s[i]==' ' && flag)
+                return count;
         }
-
-        return result;
+        return count;
     }
 };
-// Title: Length of Last Word
