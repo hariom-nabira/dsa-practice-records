@@ -1,7 +1,7 @@
 class Solution {
 public:
     int maxDepth(string s) {
-        int count=0, ans=0;
+        int count=0, ans=INT_MIN;
         for(char ch:s){
             if(ch=='('){
                 count++;
@@ -12,4 +12,3 @@ public:
         return ans;
     }
 };
-// Title: Maximum Nesting Depth of the Parentheses
