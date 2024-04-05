@@ -5,12 +5,10 @@ public:
         stack<char> st;
         for(char ch : s){
             if(!st.empty()){
-                if(abs(ch-st.top())==('a'-'A'))
+                if(islower(ch) && st.top()==toupper(ch))
                     st.pop();
-                // if(islower(ch) && st.top()==toupper(ch))
-                //     st.pop();
-                // else if(isupper(ch) && st.top()==tolower(ch))
-                //     st.pop();
+                else if(isupper(ch) && st.top()==tolower(ch))
+                    st.pop();
                 else
                     st.push(ch);
             }else
@@ -24,4 +22,3 @@ public:
         return res;
     }
 };
-// Title: Make The String Great
