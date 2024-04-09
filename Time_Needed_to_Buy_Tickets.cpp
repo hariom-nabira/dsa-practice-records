@@ -10,3 +10,4 @@ public:
         return ans;
     }
 };
+// Title: Time Needed to Buy Tickets
