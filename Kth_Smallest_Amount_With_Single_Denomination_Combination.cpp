@@ -4,7 +4,7 @@ public:
         int minCoin = INT_MAX;
         for(int ele: coins)
             minCoin = min(minCoin,ele);
-        long long range = 1LL*k*minCoin;
+        long long range = k*minCoin;
         set<long long> amounts;
         for(int ele:coins){
             int i=1;
@@ -18,4 +18,3 @@ public:
         return *itr;
     }
 };
-// Title: Kth Smallest Amount With Single Denomination Combination
