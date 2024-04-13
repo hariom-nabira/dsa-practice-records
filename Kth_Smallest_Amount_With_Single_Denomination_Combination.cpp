@@ -8,8 +8,8 @@ public:
         set<long long> amounts;
         for(int ele:coins){
             int i=1;
-            while(1LL*ele*i <= range){
-                amounts.insert(1LL*ele*i);
+            while(ele*i*1LL <= range){
+                amounts.insert(ele*i*1LL);
                 i++;
             }
         }
@@ -18,4 +18,3 @@ public:
         return *itr;
     }
 };
-// Title: Kth Smallest Amount With Single Denomination Combination
