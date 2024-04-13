@@ -26,3 +26,4 @@ public:
         return right-left;
     }
 };
+// Title: Maximum Prime Difference
