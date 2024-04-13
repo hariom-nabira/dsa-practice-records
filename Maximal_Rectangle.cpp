@@ -34,3 +34,5 @@ public:
         return maxArea;
     }
 };
+
+// Title: Maximal Rectangle
