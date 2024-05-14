@@ -18,9 +18,9 @@ public:
         int mxN = helper(grid,i-1,j);
         mxN = max(mxN,helper(grid,i+1,j));
         mxN = max(mxN,helper(grid,i,j-1));
+        mxN = max(mxN,helper(grid,i,j-1));
         mxN = max(mxN,helper(grid,i,j+1));
         grid[i][j] = val;
         return val + mxN;
     }
 };
-// Title: Path with Maximum Gold
