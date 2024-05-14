@@ -24,3 +24,4 @@ public:
         return val + mxN;
     }
 };
+// Title: Path with Maximum Gold
