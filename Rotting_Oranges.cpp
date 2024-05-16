@@ -10,14 +10,12 @@ public:
     }
 
     int orangesRotting(vector<vector<int>>& grid) {
-        int m=grid.size(), n=grid[0].size(), fresh=0;
+        int m=grid.size(), n=grid[0].size();
         queue<pair<int,int>> multiSourceBFS;
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 if(grid[i][j]==2)
                     multiSourceBFS.push({i,j});
-                else if(grid[i][j]==1)
-                    fresh++;
             }
         }
         int time=0;
@@ -32,17 +30,17 @@ public:
                     if(isValidCell(grid,di,dj) && grid[di][dj]==1){
                         multiSourceBFS.push({di,dj});
                         grid[di][dj] = 2;
-                        fresh--;
                     }
                 }
             }
             time++;
         }
-        if(fresh)
-            return -1;
-        if(time)
-            return time-1;
-        return 0;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(grid[i][j]==1)
+                    return -1;
+            }
+        }
+        return time-1;
     }
 };
-// Title: Rotting Oranges
