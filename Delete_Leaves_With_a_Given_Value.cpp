@@ -12,13 +12,11 @@
 class Solution {
 public:
     TreeNode* removeLeafNodes(TreeNode* root, int target) {
-        if(!root) return nullptr;
+        if(root==nullptr) return nullptr;
+        if(root->left==nullptr && root->right==nullptr && root->val==target) return nullptr;
         root->left = removeLeafNodes(root->left,target);
         root->right = removeLeafNodes(root->right,target);
-        if(!root->left && !root->right && root->val==target)
-            return nullptr;
-        else
-            return root;
+        if(root->left==nullptr && root->right==nullptr && root->val==target) return nullptr;
+        return root;
     }
 };
-// Title: Delete Leaves With a Given Value
