@@ -3,13 +3,10 @@ public:
     vector<bool> isArraySpecial(vector<int>& nums, vector<vector<int>>& queries) {
         int n=nums.size();
         vector<int> inflectionPoints;
-        // if((nums[1]-nums[0])%2==0)
-        //         inflectionPoints.push_back(0);
         for(int i=1;i<n;i++){
             if((nums[i]-nums[i-1])%2==0)
                 inflectionPoints.push_back(i);
         }
-        
         vector<bool> ans;
         for(int q=0;q<queries.size();q++){
             if(binarySearchRange(inflectionPoints,queries[q][0],queries[q][1]))
@@ -21,17 +18,16 @@ public:
     }
 private:
     bool binarySearchRange(vector<int> &points, int left, int right){
-        int start=0,end = points.size()-1;
+        int start=0,end=points.size()-1;
         while(start<=end){
             int mid = start + (end-start)/2;
             if(left<points[mid] && points[mid]<=right)
                 return true;
             else if(points[mid]<=left)
-                start = mid+1;
-            else
                 end = mid-1;
+            else
+                start = mid+1;
         }
         return false;
     }
 };
-// Title: Special Array II
