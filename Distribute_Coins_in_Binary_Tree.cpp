@@ -11,20 +11,15 @@
  */
 class Solution {
 private:
-    int subTreeOffers(TreeNode* root,int &ans){
+    int subTreeDemand(TreeNode* root,int &ans){
         if(root==NULL) return 0;
-        if(root->left==nullptr && root->right==nullptr) return root->val - 1;
-        int leftSubTreeOffer = subTreeOffers(root->left,ans);
-        int rightSubTreeOffer = subTreeOffers(root->right,ans);
-        ans += abs(leftSubTreeOffer);
-        ans += abs(rightSubTreeOffer);
-        return root->val + leftSubTreeOffer + rightSubTreeOffer - 1;
+        if(root->left==nullptr && root->right==nullptr) return root->val  1;
+        int leftSubTree = subTreeDemand(root->left);
+        int rightSubTree = subTreeDemand(root->right);
+        
     }
 public:
     int distributeCoins(TreeNode* root) {
-        int ans = 0;
-        subTreeOffers(root,ans);
-        return ans;
+        
     }
 };
-// Title: Distribute Coins in Binary Tree
