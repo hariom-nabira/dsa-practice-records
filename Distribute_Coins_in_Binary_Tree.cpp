@@ -13,6 +13,7 @@ class Solution {
 private:
     int subTreeOffers(TreeNode* root,int &ans){
         if(root==NULL) return 0;
+        if(root->left==nullptr && root->right==nullptr) return root->val - 1;
         int leftSubTreeOffer = subTreeOffers(root->left,ans);
         int rightSubTreeOffer = subTreeOffers(root->right,ans);
         ans += abs(leftSubTreeOffer);
@@ -26,4 +27,3 @@ public:
         return ans;
     }
 };
-// Title: Distribute Coins in Binary Tree
