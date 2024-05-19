@@ -8,3 +8,4 @@ public:
         return helper(nums,i+1,xr^nums[i]) + helper(nums,i+1,xr);
     }
 };
+// Title: Sum of All Subset XOR Totals
