@@ -2,12 +2,7 @@
  * @param {number} n
  * @return {Function} counter
  */
-var createCounter = function(n) {
-    let val=n;
-    return function() {
-        return val++;
-    };
-};
+var createCounter = (n) => () => n++;
 
 /** 
  * const counter = createCounter(10)
@@ -15,4 +10,3 @@ var createCounter = function(n) {
  * counter() // 11
  * counter() // 12
  */
-// Title: Counter
