@@ -10,3 +10,4 @@ var createCounter = (n) => () => n++;
  * counter() // 11
  * counter() // 12
  */
+// Title: Counter
