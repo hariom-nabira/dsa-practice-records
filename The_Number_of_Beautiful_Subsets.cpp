@@ -2,11 +2,10 @@ class Solution {
 public:
     int beautifulSubsets(vector<int>& nums, int k) {
         int ans=0;
-        unordered_set<int> path;
-        backtrack(nums,k,0,path,ans);
+        backtrack(nums,k,0,{},ans);
         return  ans;
     }
-    void backtrack(vector<int> &nums, int k, int index, unordered_set<int> &path, int &ans){
+    void backtrack(vector<int> &nums, int k, int index, unordered_set<int> path, int &ans){
         if(index==nums.size()) return;
         if(!path.contains(nums[index]-k) && !path.contains(nums[index]+k)){
             path.insert(nums[index]);
@@ -17,4 +16,3 @@ public:
         backtrack(nums,k,index+1,path,ans);
     }
 };
-// Title: The Number of Beautiful Subsets
