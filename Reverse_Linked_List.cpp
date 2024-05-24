@@ -12,18 +12,13 @@ class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
         if(head==nullptr || head->next==nullptr) return head;
-        // ListNode *prev = nullptr, *curr = head, *next;
-        // while(curr!=nullptr){
-        //     next = curr->next;
-        //     curr->next = prev;
-        //     prev = curr;
-        //     curr = next;
-        // }
-        // return prev;
-        ListNode* newHead = reverseList(head->next);
-        head->next->next = head;
-        head->next = nullptr;
-        return newHead;
+        ListNode *prev = nullptr, *curr = head, *next;
+        while(curr!=nullptr){
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
     }
 };
-// Title: Reverse Linked List
