@@ -20,3 +20,4 @@ public:
         return ans;
     }
 };
+// Title: Find the Number of Distinct Colors Among the Balls
