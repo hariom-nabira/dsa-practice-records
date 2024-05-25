@@ -17,7 +17,7 @@ public:
             for(auto itr2=mp2.begin();itr2!=mp2.end();itr2++){
                 if(nums1[i] < (itr2->first*k))
                     break;
-                if(nums1[i] % (itr2->first*k) ==0) ans+= 1LL*count * (itr2->second);
+                if(nums1[i] % (itr2->first*k) ==0) ans+= count * (itr2->second);
             }
         }
         // map<int,int> mp1, mp2;
@@ -35,4 +35,3 @@ public:
         return ans;
     }
 };
-// Title: Find the Number of Good Pairs II
