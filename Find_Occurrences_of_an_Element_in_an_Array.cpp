@@ -15,3 +15,4 @@ public:
         return ans;
     }
 };
+// Title: Find Occurrences of an Element in an Array
