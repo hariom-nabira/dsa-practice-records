@@ -6,7 +6,7 @@ public:
         vector<int> ans;
         for(auto &q: queries){
             if(balls[q[0]]==0){
-                if(cCount[q[1]]==0)uCount++;
+                uCount++;
                 cCount[q[1]]++;
             }else{
                 cCount[balls[q[0]]]--;
@@ -20,4 +20,3 @@ public:
         return ans;
     }
 };
-// Title: Find the Number of Distinct Colors Among the Balls
