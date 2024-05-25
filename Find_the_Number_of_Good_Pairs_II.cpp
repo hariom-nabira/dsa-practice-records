@@ -7,18 +7,12 @@ public:
         for(int i=0;i<nums1.size();i++){
             if(nums1[i] < (nums2[0]*k))
                 break;
-                int count=1;
-            while(i<nums1.size()-1 && nums1[i+1]==nums1[i]){
-                count++;
-                i++;
-            }
             for(int j=0;j<nums2.size();j++){
                 if(nums1[i] < (nums2[j]*k))
                     break;
-                if(nums1[i] % (nums2[j]*k) ==0) ans+=count;
+                if(nums1[i] % (nums2[j]*k) ==0) ans++;
             }
         }
         return ans;
     }
 };
-// Title: Find the Number of Good Pairs II
