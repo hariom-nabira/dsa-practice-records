@@ -7,7 +7,10 @@ var createCounter = function(init) {
     return{
         increment : () => ++count,
         decrement : () => --count,
-        reset : () => count=init
+        reset : () =>{ 
+            count = init;
+            return count;
+        }
     }
 };
 
@@ -17,4 +20,3 @@ var createCounter = function(init) {
  * counter.reset(); // 5
  * counter.decrement(); // 4
  */
-// Title: Counter II
