@@ -17,3 +17,4 @@ var createCounter = function(init) {
  * counter.reset(); // 5
  * counter.decrement(); // 4
  */
+// Title: Counter II
