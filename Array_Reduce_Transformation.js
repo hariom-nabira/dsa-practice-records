@@ -10,3 +10,4 @@ var reduce = function(nums, fn, init) {
         val = fn(val,num);
     return val;
 };
+// Title: Array Reduce Transformation
