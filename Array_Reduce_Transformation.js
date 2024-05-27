@@ -5,9 +5,8 @@
  * @return {number}
  */
 var reduce = function(nums, fn, init) {
-    let val = init;
+    val = init;
     for(const num of nums)
         val = fn(val,num);
     return val;
 };
-// Title: Array Reduce Transformation
