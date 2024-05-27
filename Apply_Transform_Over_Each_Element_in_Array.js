@@ -9,3 +9,4 @@ var map = function(arr, fn) {
         newArray[i] = fn(arr[i],i);
     return newArray;
 };
+// Title: Apply Transform Over Each Element in Array
