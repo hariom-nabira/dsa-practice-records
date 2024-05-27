@@ -4,9 +4,8 @@
  * @return {number[]}
  */
 var map = function(arr, fn) {
-    var newArray = []
-    const helper = (ele, indX) => {newArray[indX] = fn(ele,indX)}
-    arr.forEach(helper)
-    return newArray
+    var newArray = [];
+    for(var i=0;i<arr.length;i++)
+        newArray[i] = fn(arr[i],i);
+    return newArray;
 };
-// Title: Apply Transform Over Each Element in Array
