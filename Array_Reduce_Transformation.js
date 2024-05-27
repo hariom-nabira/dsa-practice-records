@@ -11,3 +11,4 @@ var reduce = function(nums, fn, init) {
     },[init]);
     return result[result.length-1];
 };
+// Title: Array Reduce Transformation
