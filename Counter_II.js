@@ -3,7 +3,7 @@
  * @return { increment: Function, decrement: Function, reset: Function }
  */
 var createCounter = function(init) {
-    var count = init;
+    count = init;
     return{
         increment : () => ++count,
         decrement : () => --count,
@@ -20,4 +20,3 @@ var createCounter = function(init) {
  * counter.reset(); // 5
  * counter.decrement(); // 4
  */
-// Title: Counter II
