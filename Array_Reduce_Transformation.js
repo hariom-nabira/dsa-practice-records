@@ -9,3 +9,4 @@ var reduce = function(nums, fn, init) {
         return fn(prev,ele);
     },init);
 };
+// Title: Array Reduce Transformation
