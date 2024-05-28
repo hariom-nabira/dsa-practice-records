@@ -10,11 +10,10 @@ public:
                 }
             }
         }
-        long long ans=0;
+        int ans=0;
         for(auto &num:nums2){
             ans+=fact[num*k];
         }
         return ans;
     }
 };
-// Title: Find the Number of Good Pairs II
