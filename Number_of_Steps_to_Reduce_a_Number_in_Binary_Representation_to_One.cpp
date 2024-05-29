@@ -15,10 +15,9 @@ public:
                     ans++;
                 }
                 if(temp>=0) s[temp] = '1';
-                end = temp+1;
+                end = temp;
             }
         }
         return ans;
     }
 };
-// Title: Number of Steps to Reduce a Number in Binary Representation to One
