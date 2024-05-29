@@ -8,17 +8,10 @@ public:
                 ans+=2;
                 s[end-1]='1';
             }else{
-                ans+=3;
-                int temp = end-2;
-                while(temp >=0 && s[temp]=='1'){
-                    temp--;
-                    ans++;
-                }
-                if(temp>=0) s[temp] = '1';
-                end = temp;
+                ans+=4;
+                end--;
             }
         }
         return ans;
     }
 };
-// Title: Number of Steps to Reduce a Number in Binary Representation to One
