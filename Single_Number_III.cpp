@@ -1,20 +1,16 @@
 class Solution {
 public:
     vector<int> singleNumber(vector<int>& nums) {
-        int xr =0, diffBit=0;
+        int xr =0;
         for(auto &ele:nums) xr^=ele;
-        while(!(xr&1)){
-            xr >>= 1;
-            diffBit++;
-        }
-        int xr1=0,xr2=0;
+        int n1=0,n2=0;
         for(auto &ele:nums){
-            if(ele & (1<<diffBit))
-                xr1 ^= ele;
-            else
-                xr2 ^= ele;
+            int temp = ele^xr;
+            if(temp==n1) n1=0;
+            else if(temp==n2) n2=0;
+            else if(n1==0) n1=temp;
+            else n2=temp;
         } 
-        return {xr1,xr2};
+        return {n1,n2};
     }
 };
-// Title: Single Number III
