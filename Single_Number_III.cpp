@@ -7,8 +7,6 @@ public:
             xr >>= 1;
             diffBit++;
         }
-        // instead of finding diffBit and usig 1<<diffBit we can directly get
-        // 1<<diffBit = (xr & xr-1) ^ xr
         int xr1=0,xr2=0;
         for(auto &ele:nums){
             if(ele & (1<<diffBit))
@@ -19,4 +17,3 @@ public:
         return {xr1,xr2};
     }
 };
-// Title: Single Number III
