@@ -17,4 +17,3 @@ public:
         return {xr1,xr2};
     }
 };
-// Title: Single Number III
