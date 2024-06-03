@@ -8,3 +8,4 @@ public:
         return t.size()-j;
     }
 };
+// Title: Append Characters to String to Make Subsequence
