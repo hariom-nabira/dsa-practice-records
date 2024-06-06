@@ -1,7 +1,6 @@
 class Solution {
 public:
     bool isNStraightHand(vector<int>& hand, int groupSize) {
-        if(hand.size()%groupSize!=0) return false;
         map<int,int> freq;
         for(auto &ele:hand) freq[ele]++;
         while(!freq.empty()){
@@ -17,4 +16,3 @@ public:
         return true;
     }
 };
-// Title: Hand of Straights
