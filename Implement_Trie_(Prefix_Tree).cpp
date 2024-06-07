@@ -13,30 +13,43 @@ public:
     void insert(string word) {
         TrieNode* temp = root;
         int n = word.size();
-        for(auto &ch : word){
-            if(temp->children[ch - 'a']==NULL){
-                temp->children[ch-'a'] = new TrieNode();
+        for(int i=0;i<n;i++){
+            if(temp->children[word[i] - 'a']==NULL){
+                TrieNode* n = new TrieNode();
+                temp->children[word[i]-'a'] = n;
+                temp = n;
+            }else{
+                temp = temp->children[word[i]-'a'];
             }
-            temp = temp->children[ch-'a'];
         }
         temp->isEnd = true;
     }
     
     bool search(string word) {
         TrieNode* temp = root;
-        for(auto &ch : word) {
-            temp = temp->children[ch -'a'];
+        int n = word.size(),i=0;
+        while(i<n && temp -> children [word[i] - 'a'] != NULL) {
+            cout<<word[i]<<endl;
+            temp = temp->children[word[i]-'a'];
+            i++;
         }
-        return temp->isEnd;
+        if(i==n && temp->isEnd)
+            return true;
+        else
+            return false;
     }
     
     bool startsWith(string prefix) {
         TrieNode* temp = root;
-        for(auto &ch : prefix) {
-            if(temp->children[ch-'a']==NULL) return false;
-            temp = temp->children[ch-'a'];
+        int n = prefix.size(),i=0;
+        while(i<n && temp->children[prefix[i]-'a']!=NULL) {
+            temp = temp->children[prefix[i]-'a'];
+            i++;
         }
-        return true;
+        if(i==n)
+            return true;
+        else
+            return false;
     }
 };
 
@@ -47,4 +60,3 @@ public:
  * bool param_2 = obj->search(word);
  * bool param_3 = obj->startsWith(prefix);
  */
-// Title: Implement Trie (Prefix Tree)
