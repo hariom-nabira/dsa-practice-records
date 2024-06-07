@@ -25,7 +25,6 @@ public:
     bool search(string word) {
         TrieNode* temp = root;
         for(auto &ch : word) {
-            if(temp->children[ch-'a']==NULL) return false;
             temp = temp->children[ch -'a'];
         }
         return temp->isEnd;
@@ -48,4 +47,3 @@ public:
  * bool param_2 = obj->search(word);
  * bool param_3 = obj->startsWith(prefix);
  */
-// Title: Implement Trie (Prefix Tree)
