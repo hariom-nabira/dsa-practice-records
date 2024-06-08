@@ -11,3 +11,4 @@ public:
         return a[n-1];
     }
 };
+// Title: Find the N-th Value After K Seconds
