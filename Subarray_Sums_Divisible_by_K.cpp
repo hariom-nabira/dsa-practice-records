@@ -7,13 +7,8 @@ public:
         for(int i=0;i<n;i++){
             sum += nums[i];
             ans += mp[sum%k];
-            // if(nums[i]%k==0) ans++;
-            mp[abs(sum%k)]++;
+            mp[sum%k]++;
         }
-        // for(int i=0;i<k;i++)
-        //     cout<<mp[i]<<" ";
-        //     cout<<endl<<(-1%2);
         return ans;
     }
 };
-// Title: Subarray Sums Divisible by K
