@@ -6,7 +6,7 @@ public:
         mp[0] = 1;
         for(int i=0;i<n;i++){
             sum += nums[i];
-            ans += mp[abs(sum%k)];
+            ans += mp[sum%k];
             // if(nums[i]%k==0) ans++;
             mp[abs(sum%k)]++;
         }
@@ -16,4 +16,3 @@ public:
         return ans;
     }
 };
-// Title: Subarray Sums Divisible by K
