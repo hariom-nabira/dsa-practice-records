@@ -2,9 +2,7 @@ class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
         int n=nums.size(),sum=0,ans=0;
-        // unordered_map<int,int> mp;
-        // since we are converting all remainders into positive, we can use a vector too
-        vector<int> mp(k);
+        unordered_map<int,int> mp;
         mp[0] = 1;
         for(int i=0;i<n;i++){
             sum += nums[i];
@@ -28,4 +26,3 @@ public:
         return ans;
     }
 };
-// Title: Subarray Sums Divisible by K
