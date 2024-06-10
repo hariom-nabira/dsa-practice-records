@@ -10,4 +10,3 @@ public:
         return count;
     }
 };
-// Title: Height Checker
