@@ -1,9 +1,9 @@
 class Solution {
 public:
     void swap(int &a,int &b){
-        int temp = a;
-        a = b;
-        b = temp;
+        a = a^b;
+        b = a^b;
+        a = a^b;
     }
     void sortColors(vector<int>& nums) {
         int l=0,r = nums.size()-1,i=0;
@@ -15,10 +15,8 @@ public:
             }else if(nums[i] == 2){
                 swap(nums[r],nums[i]);
                 r--;
-            }else{
+            }else
                 i++;
-            }
         }
     }
 };
-// Title: Sort Colors
