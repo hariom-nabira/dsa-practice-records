@@ -10,3 +10,4 @@ public:
         return ans;
     }
 };
+// Title: Minimum Number of Moves to Seat Everyone
