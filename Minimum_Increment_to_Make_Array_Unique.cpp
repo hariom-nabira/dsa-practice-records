@@ -38,3 +38,4 @@ public:
         return minIncrements;
     }
 };
+// Title: Minimum Increment to Make Array Unique
