@@ -11,7 +11,7 @@ public:
                 ans.push_back(ele);
             }
         }
-        for(int i=0;i<=1000;i++){
+        for(int i=1;i<=1000;i++){
             while(freq[i]){
                 freq[i]--;
                 ans.push_back(i);
@@ -20,4 +20,3 @@ public:
         return ans;
     }
 };
-// Title: Relative Sort Array
