@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool check(int n){
-        if((int)sqrt(n)==sqrt(n)) return true;
+        if(floor(sqrt(n))==n) return true;
         return false;
     }
     bool judgeSquareSum(int c) {
@@ -11,4 +11,3 @@ public:
         return false;
     }
 };
-// Title: Sum of Square Numbers
