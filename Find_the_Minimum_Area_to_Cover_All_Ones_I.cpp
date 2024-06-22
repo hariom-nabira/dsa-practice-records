@@ -15,3 +15,4 @@ public:
         return (maxRow-minRow+1)*(maxCol-minCol+1);
     }
 };
+// Title: Find the Minimum Area to Cover All Ones I
