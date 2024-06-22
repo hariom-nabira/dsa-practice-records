@@ -2,26 +2,20 @@ class Solution {
 public:
     long long maximumTotalCost(vector<int>& nums) {
         int n = nums.size();
-        long long ans = nums[0],i=1;
-        while(i<n){
-            if(nums[i] >= 0){
+        long long ans = nums[0];
+        for(int i=1;i<n;i++){
+            if(nums[i] >= 0)
                 ans+=nums[i];
-                i++;
-            }
             else{
-                long long odd=0,even=0;
-                while(i<n && nums[i] < 0){
-                    if(i&1)
-                        odd += nums[i];
-                    else
-                        even += nums[i];
+                if(i<n-1 && nums[i+1]<0){
+                    ans += -1LL * min(nums[i],nums[i+1]);
+                    ans += max(nums[i],nums[i+1]);
                     i++;
+                }else{
+                    ans += abs(nums[i]);
                 }
-                ans += -1 * min(odd,even);
-                ans += max(odd,even);
             }
         }
         return ans;
     }
 };
-// Title: Maximize Total Cost of Alternating Subarrays
