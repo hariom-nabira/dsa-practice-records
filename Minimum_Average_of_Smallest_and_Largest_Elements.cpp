@@ -13,3 +13,4 @@ public:
         return mn;
     }
 };
+// Title: Minimum Average of Smallest and Largest Elements
