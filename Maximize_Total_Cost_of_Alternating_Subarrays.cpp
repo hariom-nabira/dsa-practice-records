@@ -17,9 +17,8 @@ public:
                 i++;
             }
         }
-        if(n>2 && nums[n-2]>0) ans += abs(nums[n-1]);
-        if(n==2) ans+= abs(nums[n-1]);
+        cout<<n;
+        if(n>=2 && nums[n-2]>0) ans += abs(nums[n-1]);
         return ans;
     }
 };
-// Title: Maximize Total Cost of Alternating Subarrays
