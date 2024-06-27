@@ -6,3 +6,4 @@ public:
         return edges[0][1];
     }
 };
+// Title: Find Center of Star Graph
