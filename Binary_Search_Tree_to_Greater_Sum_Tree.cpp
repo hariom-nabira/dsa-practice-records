@@ -17,10 +17,9 @@ public:
     }
     int helper(TreeNode* root, int parentContri){
         if(!root) return parentContri;
-        int rightSubTreeSum = helper(root->right,parentContri);
+        int rightSubTreeSum = helper(root->right,parentContri, false);
         root->val = root->val + rightSubTreeSum;
-        int leftSubTreeSum = helper(root->left, root->val);
+        int leftSubTreeSum = helper(root->left, root->val, true);
         return leftSubTreeSum;
     }
 };
-// Title: Binary Search Tree to Greater Sum Tree
