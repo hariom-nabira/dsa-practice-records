@@ -12,10 +12,10 @@
 class Solution {
 public:
     TreeNode* bstToGst(TreeNode* root) {
-        helper(root,0);
+        helper(root,0,false);
         return root;
     }
-    int helper(TreeNode* root, int parentContri){
+    int helper(TreeNode* root, int parentContri, bool isLeft){
         if(!root) return parentContri;
         int rightSubTreeSum = helper(root->right,parentContri, false);
         root->val = root->val + rightSubTreeSum;
@@ -23,4 +23,3 @@ public:
         return leftSubTreeSum;
     }
 };
-// Title: Binary Search Tree to Greater Sum Tree
