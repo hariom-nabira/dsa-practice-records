@@ -1,7 +1,7 @@
 class Solution {
 public:
     long long maximumImportance(int n, vector<vector<int>>& roads) {
-        long long ans=0;
+        int ans=0;
         vector<int> freq(n);
         for(int i=0;i<roads.size();i++){
             freq[roads[i][0]]++;
@@ -14,4 +14,3 @@ public:
         return ans;
     }
 };
-// Title: Maximum Total Importance of Roads
