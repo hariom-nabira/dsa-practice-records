@@ -15,3 +15,4 @@ public:
         return false;
     }
 };
+// Title: Three Consecutive Odds
