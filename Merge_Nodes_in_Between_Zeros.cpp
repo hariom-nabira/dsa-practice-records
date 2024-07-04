@@ -16,16 +16,15 @@ public:
         int currSum = 0;
         while(curr){
             if(curr->val==0){
-                curr->val = currSum;
+                last->val = currSum;
                 currSum=0;
-                last->next = curr;
+                last->next = (curr->next) ? curr : nullptr;
                 last = curr;
             }else{
                 currSum += curr->val;
             }
             curr = curr->next;
         }
-        return head->next;
+        return head;
     }
 };
-// Title: Merge Nodes in Between Zeros
