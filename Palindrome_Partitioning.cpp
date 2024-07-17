@@ -18,15 +18,14 @@ public:
     void helper(string &s, int index, vector<vector<string>> & ans, vector<string> &curr){
         if(index==s.size()){
             ans.push_back(curr);
+            curr = {};
         }
         for(int i=1; i <= s.size()-index; i++){
             string substring = s.substr(index,i);
             if(isPalindrome(substring)){
                 curr.push_back(s.substr(index,i));
                 helper(s, index+i, ans, curr);
-                curr.pop_back();
             }
         }
     }
 };
-// Title: Palindrome Partitioning
