@@ -19,4 +19,3 @@ public:
         return ans;
     }
 };
-// Title: Lucky Numbers in a Matrix
