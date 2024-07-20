@@ -1,13 +1,20 @@
 class Solution {
 public:
-    unordered_map<char, string> mp = {
-        {'2', "abc"}, {'3', "def"}, {'4', "ghi"},
-        {'5', "jkl"}, {'6', "mno"}, {'7', "pqrs"},
-        {'8', "tuv"}, {'9', "wxyz"}
+    unordered_map<int,vector<string>> mp = {
+        {2, {"a","b","c"}},
+        {3, {"d","e","f"}},
+        {4, {"g","h","i"}},
+        {5, {"j","k","l"}},
+        {6, {"m","n","o"}},
+        {7, {"p","q","r","s"}},
+        {8, {"t","u","v"}},
+        {9, {"w","x","y","z"}},
     };
     vector<string> letterCombinations(string digits) {
+        int start=0;
         vector<string> ans;
-        helper(0,digits, "", ans);
+        string curr;
+        helper(start,digits, curr, ans);
         return ans;
     }
     void helper(int i, string &digits, string curr, vector<string> &ans){
@@ -15,9 +22,8 @@ public:
             ans.push_back(curr);
             return;
         }
-        for(char ch : mp[digits[i]]){
-            helper(i+1,digits,curr+ch,ans);
+        for(string s : mp[digits[i]-'0']){
+            helper(i+1,digits,curr+s,ans);
         }
     }
 };
-// Title: Letter Combinations of a Phone Number
