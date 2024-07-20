@@ -7,7 +7,7 @@ public:
         long long mn = abs(nums[0]);
         bool dec = false;
         for(int i=1;i<n;i++){
-            if((nums[i]<0 && nums[i-1]<0) || (nums[i]>0 && nums[i-1]>0)){
+            if((nums[i]<0 && nums[i-1]<0) || (nums[i]>=0 && nums[i-1]>=0)){
                 if(abs(nums[i]) >= abs(nums[i-1]) && !dec){
                     ans += abs(nums[i]) - abs(nums[i-1]);
                 }else if(abs(nums[i]) >= abs(nums[i-1]) && !dec){
@@ -24,4 +24,3 @@ public:
         return ans;
     }
 };
-// Title: Minimum Operations to Make Array Equal to Target
