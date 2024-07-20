@@ -10,11 +10,9 @@ public:
             if((nums[i]<0 && nums[i-1]<0) || (nums[i]>0 && nums[i-1]>0)){
                 if(abs(nums[i]) >= abs(nums[i-1]) && !dec){
                     ans += abs(nums[i]) - abs(nums[i-1]);
-                }else if(abs(nums[i]) >= abs(nums[i-1]) && dec){
+                }else if(abs(nums[i]) >= abs(nums[i-1]) && !dec){
                     dec=false;
-                    mn = min(abs(1LL*nums[i-1]),mn);
                     ans += abs(nums[i]) - mn;
-                    mn = abs(nums[i]);
                 }else{
                     dec = true;
                 }
@@ -26,4 +24,3 @@ public:
         return ans;
     }
 };
-// Title: Minimum Operations to Make Array Equal to Target
