@@ -12,8 +12,8 @@ public:
                     ans += abs(nums[i]) - abs(nums[i-1]);
                 }else if(abs(nums[i]) >= abs(nums[i-1]) && dec){
                     dec=false;
-                    // mn = min(abs(1LL*nums[i-1]),mn);
-                    ans += abs(nums[i]) - abs(nums[i-1]);
+                    mn = min(abs(1LL*nums[i-1]),mn);
+                    ans += abs(nums[i]) - mn;
                     mn = abs(nums[i]);
                 }else{
                     dec = true;
@@ -22,9 +22,7 @@ public:
                 ans += abs(nums[i]);
                 mn = abs(nums[i]);
             }
-            cout<<ans<<" ";
         }
         return ans;
     }
 };
-// Title: Minimum Operations to Make Array Equal to Target
