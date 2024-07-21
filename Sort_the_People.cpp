@@ -1,30 +1,17 @@
-//editorial
-
 class Solution {
 public:
-    vector<string> sortPeople(vector<string>& names,
-                              const vector<int>& heights) {
-        int numberOfPeople = names.size();
-
-        // Create a permutation vector to store sorted indices
-        vector<int> sortedIndices(numberOfPeople);
-        iota(sortedIndices.begin(), sortedIndices.end(), 0);
-
-        // Sort indices based on heights in descending order
-        sort(sortedIndices.begin(), sortedIndices.end(),
-             [&heights](int a, int b) { return heights[a] > heights[b]; });
-
-        // Prepare the result vector to store sorted names
-        vector<string> sortedNames;
-        sortedNames.reserve(numberOfPeople);
-
-        // Apply the sorted indices to rearrange names using a traditional for
-        // loop
-        for (int i = 0; i < numberOfPeople; i++) {
-            sortedNames.push_back(move(names[sortedIndices[i]]));
+    vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
+        int n=heights.size();
+        vector<pair<int,string>> v;
+        for(int i=0;i<n;i++){
+            v.push_back({heights[i],names[i]});
         }
-
-        return sortedNames;
+        sort(v.begin(),v.end(),[&](auto &p1,auto &p2){
+            return p1.first>p2.first;
+        });
+        for(int i=0;i<n;i++){
+            names[i] = v[i].second;
+        }
+        return names;
     }
 };
-// Title: Sort the People
