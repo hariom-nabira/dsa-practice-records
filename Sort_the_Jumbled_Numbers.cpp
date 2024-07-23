@@ -1,7 +1,6 @@
 class Solution {
 public:
     int mappedVal(int n, vector<int>& mapping){
-        if(n==0) return mapping[0];
         int ans=0,i=0;
         while(n>0){
             ans += mapping[n%10]*pow(10,i);
@@ -21,4 +20,3 @@ public:
         return nums;
     }
 };
-// Title: Sort the Jumbled Numbers
