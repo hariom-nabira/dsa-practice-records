@@ -4,16 +4,11 @@ public:
         int left=0, right = s.size()-1, k=1;
         while(left<=right){
             if(s[left]!=s[right]){
-                // if(helper(s,left,right-1)|| helper(s,left+1,right)){
-                //     return true;
-                // }else{
-                //     return false;
-                // }
-                if(!k) return false;
-                if(s[left+1]==s[right]) left++;
-                else if(s[right-1]==s[left]) right--;
-                else return false;
-                k--;
+                if(helper(s,left,right-1)|| helper(s,left+1,right)){
+                    return true;
+                }else{
+                    return false;
+                }
             }
             left++;
             right--;
@@ -29,4 +24,3 @@ public:
         return true;
     }
 };
-// Title: Valid Palindrome II
