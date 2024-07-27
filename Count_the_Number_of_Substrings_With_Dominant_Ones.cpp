@@ -18,3 +18,4 @@ public:
         return ans;
     }
 };
+// Title: Count the Number of Substrings With Dominant Ones
