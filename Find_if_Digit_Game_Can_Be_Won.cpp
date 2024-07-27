@@ -12,3 +12,4 @@ public:
         return s!=d;
     }
 };
+// Title: Find if Digit Game Can Be Won
