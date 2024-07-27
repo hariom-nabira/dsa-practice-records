@@ -5,11 +5,10 @@ public:
         for(auto e:nums){
             if(e<10){
                 s+=e;
-            }else if(e<100){
+            }else if(e<20){
                 d+=e;
             }
         }
         return s!=d;
     }
 };
-// Title: Find if Digit Game Can Be Won
