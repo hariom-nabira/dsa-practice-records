@@ -17,3 +17,4 @@ public:
         return r-l+1-count;
     }
 };
+// Title: Find the Count of Numbers Which Are Not Special
