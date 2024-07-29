@@ -10,11 +10,10 @@ public:
                 ans = min(ans, currB + totalA - currA);
                 currB++;
             }else{
-                currA++;
                 ans = min(ans, currB + totalA - currA);
+                currA++;
             }
         }
         return ans;
     }
 };
-// Title: Minimum Deletions to Make String Balanced
