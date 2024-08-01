@@ -8,3 +8,4 @@ public:
         return ans;
     }
 };
+// Title: Number of Senior Citizens
