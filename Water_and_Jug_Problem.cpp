@@ -2,7 +2,7 @@ class Solution {
 public:
     bool canMeasureWater(int a, int b, int target) {
         if(target > a+b) return false;
-        // if(target % gcd(a,b) == 0) return true;
+        if(target % gcd(a,b) == 0) return true;
         set<pair<int,int>> seen;
         queue<pair<int,int>> q;
         q.push({0,0});
@@ -20,7 +20,7 @@ public:
                 bToa(curr,a,b),
             };
             for(auto temp : nextOptions){
-                if(temp.first + temp.second == target) return true;
+                if(temp.first==target || temp.second==target) return true;
                 if(!seen.contains(temp)){
                     q.push(temp);
                     seen.insert(temp);
@@ -56,4 +56,3 @@ public:
         else return {a, y-a+x};
     }
 };
-// Title: Water and Jug Problem
