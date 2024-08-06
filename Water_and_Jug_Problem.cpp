@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool canMeasureWater(int a, int b, int target) {
-        if(target % gcd(a,b) == 0) return true;
+        if(a+b == target) return true;
         set<pair<int,int>> seen;
         queue<pair<int,int>> q;
         q.push({0,0});
@@ -55,4 +55,3 @@ public:
         else return {a, y-a+x};
     }
 };
-// Title: Water and Jug Problem
