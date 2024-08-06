@@ -25,9 +25,8 @@ public:
             ans += helper(mp["Thousand "]);
             ans += " Thousand";
         }
-        if(ans!="" && mp[" "]) ans+=" ";
-        if(ans=="") ans += helper(mp[" "]);
-        else if(mp[" "]) ans += helper(mp[" "]);
+        if(ans!="") ans+=" ";
+        ans += helper(mp[" "]);
         return ans;
     }
     vector<string> units = {"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
@@ -58,4 +57,3 @@ public:
         return ans;
     }
 };
-// Title: Integer to English Words
