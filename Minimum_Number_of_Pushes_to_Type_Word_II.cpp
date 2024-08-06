@@ -9,7 +9,7 @@ public:
         int ans=0, push=1;
         for(int i=0;i<26;i+=8){
             for(int j=0;j<8 && i+j<26;j++){
-                if(freq[i+j]==0) return ans;
+                // if(freq[i+j]==0) return ans;
                 ans += (freq[i+j]) * push;
             }
             push++;
@@ -17,4 +17,3 @@ public:
         return ans;
     }
 };
-// Title: Minimum Number of Pushes to Type Word II
