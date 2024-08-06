@@ -13,19 +13,16 @@ public:
         string ans;
         if(mp["Billion "]){
             ans += helper(mp["Billion "]);
-            ans += " Billion";
+            ans += " Billion ";
         }
         if(mp["Million "]){
-            if(ans!="") ans+=" ";
             ans += helper(mp["Million "]);
-            ans += " Million";
+            ans += " Million ";
         }
         if(mp["Thousand "]){
-            if(ans!="") ans+=" ";
             ans += helper(mp["Thousand "]);
-            ans += " Thousand";
+            ans += " Thousand ";
         }
-        if(ans!="") ans+=" ";
         ans += helper(mp[" "]);
         return ans;
     }
@@ -38,23 +35,21 @@ public:
         bool flag = true;
         if(n/100){
             ans += units[n/100];
-            ans += " Hundred"; 
+            ans += " Hundred "; 
         }
         if((n%100)/10 == 1){
-            if(ans!="") ans+=" ";
             ans += teens[n%10];
             flag=false;
         }else if((n%100)/10){
-            if(ans!="") ans+=" ";
             ans += tens[(n%100)/10];
+            ans += " ";
         }
         if(flag){
             if(ans=="") ans+= units[n%10];
             else if(n%10){
-                ans += " "+units[n%10];
+                ans += units[n%10];
             }
         }
         return ans;
     }
 };
-// Title: Integer to English Words
