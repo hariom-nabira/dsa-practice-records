@@ -7,11 +7,13 @@ public:
         }
         sort(freq.begin(),freq.end(),greater<int>());
         int ans=0, push=1;
-        for(int i=0;i<26;i++){
+        for(int i=0;i<26;i+=8){
+            for(int j=0;j<8 && i+j<26;j++){
                 if(freq[i+j]==0) return ans;
-                ans += freq[i] * ((i/8)+1);
+                ans += (freq[i+j]) * push;
+            }
+            push++;
         }
         return ans;
     }
 };
-// Title: Minimum Number of Pushes to Type Word II
