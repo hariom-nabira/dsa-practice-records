@@ -23,7 +23,9 @@ public:
             ans += helper(mp["Thousand "]);
             ans += " Thousand ";
         }
-        ans += helper(mp[" "]);
+        if(mp[" "]){
+            ans += helper(mp[" "]);
+        }
         return ans;
     }
     vector<string> units = {"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
@@ -31,7 +33,7 @@ public:
     vector<string> tens = {" Z "," O ","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"};
 
     string helper(int n){
-        string ans="";
+        string ans;
         bool flag = true;
         if(n/100){
             ans += units[n/100];
@@ -45,12 +47,10 @@ public:
             ans += " ";
         }
         if(flag){
-            if(ans=="") ans+= units[n%10];
-            else if(n%10){
+            if(n%10){
                 ans += units[n%10];
             }
         }
         return ans;
     }
 };
-// Title: Integer to English Words
