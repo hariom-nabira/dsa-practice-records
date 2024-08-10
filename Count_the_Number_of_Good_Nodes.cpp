@@ -26,3 +26,4 @@ public:
         return children+1;
     }
 };
+// Title: Count the Number of Good Nodes
