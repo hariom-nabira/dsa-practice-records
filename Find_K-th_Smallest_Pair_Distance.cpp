@@ -15,9 +15,9 @@ public:
         for(int i=0;i<n;i++){
             for(int j=i+1;j<n;j++){
                 add(maxHeap,abs(nums[i]-nums[j]), k);
+                add(maxHeap,abs(nums[i]-nums[j]), k);
             }
         }
         return maxHeap.top();
     }
 };
-// Title: Find K-th Smallest Pair Distance
