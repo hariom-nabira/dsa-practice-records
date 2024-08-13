@@ -49,3 +49,4 @@ class Solution:
             return (x + y, 0)
         else:
             return (a, y - (a - x))
+// Title: Water and Jug Problem
