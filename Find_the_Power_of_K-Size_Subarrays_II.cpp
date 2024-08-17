@@ -9,8 +9,7 @@ public:
         if(lastBT!=-1) res.push_back(-1);
         else res.push_back(nums[k-1]);
         for(int i=k;i<n;i++){
-            if(k==1) res.push_back(nums[i]);
-            else if(nums[i]!=nums[i-1]+1){
+            if(nums[i]!=nums[i-1]+1){
                 lastBT = i;
                 res.push_back(-1);
             }else if(lastBT+k-1 > i){
@@ -22,4 +21,3 @@ public:
         return res;
     }
 };
-// Title: Find the Power of K-Size Subarrays II
