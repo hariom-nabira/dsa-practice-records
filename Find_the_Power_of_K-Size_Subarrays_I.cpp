@@ -22,3 +22,4 @@ public:
         return res;
     }
 };
+// Title: Find the Power of K-Size Subarrays I
