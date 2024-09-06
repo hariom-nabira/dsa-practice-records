@@ -25,3 +25,4 @@ public:
         return extra->next;
     }
 };
+// Title: Delete Nodes From Linked List Present in Array
