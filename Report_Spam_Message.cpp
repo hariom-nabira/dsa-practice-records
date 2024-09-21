@@ -15,4 +15,3 @@ public:
             return false;
     }
 };
-// Title: Report Spam Message
