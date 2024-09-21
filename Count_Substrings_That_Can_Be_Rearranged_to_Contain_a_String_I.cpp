@@ -19,11 +19,8 @@ public:
                 ans += n-j;
                 currFreq[word1[i]-'a']--;
                 i++;
-                currFreq[word1[j]-'a']--;
-                j--;
             }
         }
         return ans;
     }
 };
-// Title: Count Substrings That Can Be Rearranged to Contain a String I
