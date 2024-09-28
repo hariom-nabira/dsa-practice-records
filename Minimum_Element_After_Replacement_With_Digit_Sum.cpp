@@ -16,3 +16,4 @@ public:
         return mn;
     }
 };
+// Title: Minimum Element After Replacement With Digit Sum
