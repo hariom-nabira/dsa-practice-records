@@ -2,8 +2,7 @@ class Solution {
 public:
     long long maximumTotalSum(vector<int>& maximumHeight) {
         sort(maximumHeight.begin(),maximumHeight.end(), greater<int>());
-        int lastUsed = INT_MAX;
-        long long ans = 0;
+        int ans = 0, lastUsed = INT_MAX;
         for(auto &e: maximumHeight){
             if(e < lastUsed){
                 // ans += e;
@@ -17,4 +16,3 @@ public:
         return (lastUsed > 0)? ans : -1;
     }
 };
-// Title: Maximize the Total Height of Unique Towers
