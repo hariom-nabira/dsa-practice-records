@@ -9,16 +9,6 @@ public:
     }
     bool helper(int i1, int i2, string word1, string word2, vector<int> &ans, bool ghapla){
         if(i2 == word2.size()) return true;
-        if(word1[i1]==word2[i2]){
-            ans.push_back(i1);
-            if(helper(i1+1,i2+1,word1,word2,ans,ghapla)){
-                return true;
-            }
-            else{
-                ans.pop_back();
-                return false;
-            }
-        }
         if(ghapla){
             ans.push_back(i1);
             if(helper(i1+1,i2+1,word1,word2,ans,!ghapla)){
@@ -61,4 +51,3 @@ public:
         // return false;
     }
 };
-// Title: Find the Lexicographically Smallest Valid Sequence
