@@ -15,9 +15,9 @@ public:
         }
         for(int i=n-1;i>=0;i--){
             if(preMax[i]>digits[i]){
-                int j = 0;
-                while(j<i && digits[j]!=preMax[i]){
-                    j++;
+                int j=i;
+                while(j>=0 && digits[j]!=preMax[i]){
+                    j--;
                 }
                 ans -= digits[i] * pow(10,i);
                 ans -= digits[j] * pow(10,j);
@@ -29,4 +29,3 @@ public:
         return ans;
     }
 };
-// Title: Maximum Swap
