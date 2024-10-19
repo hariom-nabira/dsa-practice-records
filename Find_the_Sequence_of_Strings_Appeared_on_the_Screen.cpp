@@ -12,3 +12,4 @@ public:
         return ans;
     }
 };
+// Title: Find the Sequence of Strings Appeared on the Screen
