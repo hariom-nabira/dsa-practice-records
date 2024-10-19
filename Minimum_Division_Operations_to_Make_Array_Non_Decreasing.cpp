@@ -1,6 +1,5 @@
 class Solution {
 public:
-    vector<int> primes = SieveOfEratosthenes(1e6);
     vector<int> SieveOfEratosthenes(int n){
         vector<bool> prime(n + 1, true);
         for (int p = 2; p * p <= n; p++) {
@@ -9,13 +8,13 @@ public:
                     prime[i] = false;
             }
         }
-        vector<int> ans;
+        vector<int> primes;
         for (int p = 2; p <= n; p++)
             if (prime[p])
-                ans.push_back(p);
-        return ans;
+                primes.push_back(p);
+        return primes;
     }
-    int performOp(int x){
+    int performOp(int x, vector<int> &primes){
         for(int i=0;primes[i]<=x;i++){
             if(x%primes[i]==0){
                 return primes[i];
@@ -24,7 +23,7 @@ public:
         return -1;
     }
     int minOperations(vector<int>& nums) {
-        
+        vector<int> primes = SieveOfEratosthenes(*max_element(nums.begin(),nums.end()));
         // for(auto &e:primes){
         //     cout<<e<<" ";
         // }
@@ -32,7 +31,7 @@ public:
         int n = nums.size(), ans=0;
         for(int i=n-2;i>=0;i--){
             if(nums[i] > nums[i+1]){
-                int temp = performOp(nums[i]);
+                int temp = performOp(nums[i],primes);
                 if(temp <= nums[i+1]){
                     ans++;
                     nums[i] = temp;
@@ -44,4 +43,3 @@ public:
         return ans;
     }
 };
-// Title: Minimum Division Operations to Make Array Non Decreasing
