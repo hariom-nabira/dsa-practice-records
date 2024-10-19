@@ -23,14 +23,10 @@ public:
         return -1;
     }
     int minOperations(vector<int>& nums) {
-        vector<int> primes = SieveOfEratosthenes(*max_element(nums.begin(),nums.end()));
-        // for(auto &e:primes){
-        //     cout<<e<<" ";
-        // }
-        // cout<<"\n";
+        vector<int> primes = SieveOfEratosthenes(1e6);
         int n = nums.size(), ans=0;
         for(int i=n-2;i>=0;i--){
-            if(nums[i] > nums[i+1]){
+            if(nums[i]>nums[i+1]){
                 int temp = performOp(nums[i],primes);
                 if(temp <= nums[i+1]){
                     ans++;
@@ -43,4 +39,3 @@ public:
         return ans;
     }
 };
-// Title: Minimum Division Operations to Make Array Non Decreasing
