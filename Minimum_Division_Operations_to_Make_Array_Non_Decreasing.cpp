@@ -26,8 +26,8 @@ public:
         vector<int> primes = SieveOfEratosthenes(1e6);
         int n = nums.size(), ans=0;
         for(int i=n-2;i>=0;i--){
+            int temp = performOp(nums[i],primes);
             if(nums[i]>nums[i+1]){
-                int temp = performOp(nums[i],primes);
                 if(temp <= nums[i+1]){
                     ans++;
                     nums[i] = temp;
@@ -39,4 +39,3 @@ public:
         return ans;
     }
 };
-// Title: Minimum Division Operations to Make Array Non Decreasing
