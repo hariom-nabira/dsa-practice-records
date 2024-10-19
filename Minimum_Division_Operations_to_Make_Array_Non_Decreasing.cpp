@@ -15,7 +15,8 @@ public:
         return primes;
     }
     int performOp(int x, vector<int> &primes){
-        for(int i=0;primes[i]<=x;i++){
+        int n=primes.size();
+        for(int i=0;i<n;i++){
             if(x%primes[i]==0){
                 return primes[i];
             }
@@ -39,4 +40,3 @@ public:
         return ans;
     }
 };
-// Title: Minimum Division Operations to Make Array Non Decreasing
