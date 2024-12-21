@@ -9,26 +9,19 @@ public:
         return a[1] < b[1];
     }
     bool checkValidCuts(int n, vector<vector<int>>& rectangles) {
+        int count=0;
         sort(rectangles.begin(), rectangles.end(), mySortX);
-        int count=0, maxSoFar = rectangles[0][2];
         for(int i=1; i<(int) rectangles.size(); i++){
-            // cout<<rectangles[i][0]<<" "<<rectangles[i][2]<<"\n";
-            if(rectangles[i][0] >= maxSoFar){
-                count++;
-                // cout<<"---------"<<i<<"\n";
-            }
-            maxSoFar = max(maxSoFar, rectangles[i][2]);
+            if(rectangles[i][0] >= rectangles[i-1][2]) count++;
         }
         if(count>=2) return true;
 
+        count=0;
         sort(rectangles.begin(), rectangles.end(), mySortY);
-        count=0, maxSoFar = rectangles[0][3];
         for(int i=1; i<(int) rectangles.size(); i++){
-            if(rectangles[i][1] >= maxSoFar) count++;
-            maxSoFar = max(maxSoFar, rectangles[i][3]);
+            if(rectangles[i][1] >= rectangles[i-1][3]) count++;
         }
         if(count>=2) return true;
         return false;
     }
 };
-// Title: Check if Grid can be Cut into Sections
