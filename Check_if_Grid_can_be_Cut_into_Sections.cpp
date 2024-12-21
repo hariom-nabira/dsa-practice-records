@@ -12,7 +12,11 @@ public:
         sort(rectangles.begin(), rectangles.end(), mySortX);
         int count=0, maxSoFar = rectangles[0][2];
         for(int i=1; i<(int) rectangles.size(); i++){
-            if(rectangles[i][0] >= maxSoFar) count++;
+            // cout<<rectangles[i][0]<<" "<<rectangles[i][2]<<"\n";
+            if(rectangles[i][0] >= maxSoFar){
+                count++;
+                // cout<<"---------"<<i<<"\n";
+            }
             maxSoFar = max(maxSoFar, rectangles[i][2]);
         }
         if(count>=2) return true;
@@ -27,4 +31,3 @@ public:
         return false;
     }
 };
-// Title: Check if Grid can be Cut into Sections
