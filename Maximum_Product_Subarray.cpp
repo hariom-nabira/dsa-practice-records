@@ -1,24 +1,31 @@
 class Solution {
 public:
+    int helper(vector<int> &nums, int l, int r, int prod){
+        if(l>=r) return prod;
+        int prodLeft=1, prodRight=1;
+        for(int i=l; i<=r; i++){
+            prodLeft *= nums[i];
+            if(nums[i]<0) break;
+        }
+        for(int i=r; i>=l; i--){
+            prodRight *= nums[i];
+            if(nums[i]<0) break;
+        }
+        return prod / max(prodLeft, prodRight);
+    }
     int maxProduct(vector<int>& nums) {
-        //much cleaner approach
-        //ek-baar left-right jao max lete hue
-        //dusri baar right-left aao max lete hue
-        //0 mila to bas vo carry na ho isliye curr=1 explicitly karo
-        int ans = INT_MIN, n=nums.size();
-        int curr=1;
+        int prod=1, ans=INT_MIN, last=0, n=nums.size();
         for(int i=0; i<n; i++){
-            curr *= nums[i];
-            ans = max(ans, curr);
-            if(curr==0) curr=1;
+            if(nums[i]==0){
+                ans = max(ans, 0);
+                if(last<=i-1) ans = max(ans, (prod>=0)?prod : helper(nums, last, i-1, prod));
+                prod = 1;
+                last = i+1;
+            }else{
+                prod *= nums[i];
+            }
         }
-        curr=1;
-        for(int i=n-1; i>=0; i--){
-            curr *= nums[i];
-            ans = max(ans, curr);
-            if(curr==0) curr=1;
-        }
+        if(last<=n-1)ans = max(ans, (prod>=0)?prod : helper(nums, last, n-1, prod));
         return ans;
     }
 };
-// Title: Maximum Product Subarray
