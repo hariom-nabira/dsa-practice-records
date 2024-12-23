@@ -15,21 +15,17 @@ public:
     }
     int maxProduct(vector<int>& nums) {
         int prod=1, ans=INT_MIN, last=0, n=nums.size();
-
-        if(n==1 && nums[0]==0) return 0;
-
         for(int i=0; i<n; i++){
             if(nums[i]==0){
                 ans = max(ans, 0);
-                ans = max(ans, (prod>=0)?prod : helper(nums, last, i-1, prod));
+                if(i>0)ans = max(ans, (prod>=0)?prod : helper(nums, last, i-1, prod));
                 prod = 1;
                 last = i+1;
             }else{
                 prod *= nums[i];
             }
         }
-        ans = max(ans, (prod>=0)?prod : helper(nums, last, n-1, prod));
+        if(n>1)ans = max(ans, (prod>=0)?prod : helper(nums, last, n-1, prod));
         return ans;
     }
 };
-// Title: Maximum Product Subarray
