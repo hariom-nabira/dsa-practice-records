@@ -18,15 +18,14 @@ public:
         for(int i=0; i<n; i++){
             if(nums[i]==0){
                 ans = max(ans, 0);
-                if(i>0)ans = max(ans, (prod>=0)?prod : helper(nums, last, i-1, prod));
+                ans = max(ans, (prod>=0)?prod : helper(nums, last, i-1, prod));
                 prod = 1;
                 last = i+1;
             }else{
                 prod *= nums[i];
             }
         }
-        if(n>1)ans = max(ans, (prod>=0)?prod : helper(nums, last, n-1, prod));
+        ans = max(ans, (prod>=0)?prod : helper(nums, last, n-1, prod));
         return ans;
     }
 };
-// Title: Maximum Product Subarray
