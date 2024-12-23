@@ -3,7 +3,7 @@ public:
     vector<int> majorityElement(vector<int>& nums) {
         int cand1, cand2, c1=0, c2=0, n=nums.size();
         for(int i=0; i<n; i++){
-            if(c1==0 && nums[i]!=cand2) cand1=nums[i];
+            if(c1==0) cand1=nums[i];
             else if(c2==0 && nums[i]!=cand1) cand2=nums[i];
 
             if(nums[i] == cand1) c1++;
@@ -25,4 +25,3 @@ public:
         return ans;
     }
 };
-// Title: Majority Element II
