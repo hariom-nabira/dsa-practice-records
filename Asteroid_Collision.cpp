@@ -1,7 +1,7 @@
 class Solution {
 public:
     void insert_st(stack<int> &st, int &e){
-        if(st.empty() || (st.top()>0 && e>0) || st.top()<0){
+        if(st.empty() || (st.top()>0 == e>0)){
             st.push(e); 
             return;
         }
@@ -27,4 +27,3 @@ public:
         return result;
     }
 };
-// Title: Asteroid Collision
