@@ -2,8 +2,8 @@ class Solution {
 public:
     void twoSum(vector<int> &nums, int start, int target, vector<vector<int>> &ans){
         for(int i=start; i<(int)nums.size(); i++){
-            if(i>start && nums[i]==nums[i-1]) continue;
             if(binary_search(nums.begin()+i+1, nums.end(),target - nums[i])){
+                // cout<<start<<" "<<
                 ans.push_back({-1*target, nums[i], target - nums[i]});
             }
         }
@@ -18,4 +18,3 @@ public:
         return ans;
     }
 };
-// Title: 3Sum
