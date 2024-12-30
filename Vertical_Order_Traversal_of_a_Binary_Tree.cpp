@@ -12,7 +12,7 @@
 class Solution {
 public:
     vector<vector<int>> verticalTraversal(TreeNode* root) {
-        map<int, vector<pair<int,priority_queue<int, vector<int>, greater<int>>>>> mp; // col: {{depth, pq<val>}, {{depth, pq<val>}, {{depth, pq<val>}, {{depth, pq<val>}}
+        map<int, vector<pair<int,int>>> mp; // col: {{val, depth}, {val, depth}, {val, depth}, {val, depth}}
         queue<pair<TreeNode*, pair<int,int>>> q; // {node, {row,col}}
         q.push({root, {0,0}});
         while(!q.empty()){
@@ -21,28 +21,27 @@ public:
             int col = q.front().second.second;
             q.pop();
             if(!node) continue;
-            if(mp.find(col) == mp.end() || mp[col].back().first < row){
-                priority_queue<int, vector<int>, greater<int>> pq;
-                pq.push(node->val);
-                mp[col].push_back({row,pq});
-            }else{ // if(mp[col].back().first == row) //since we are going level order > wali condition aa hi nhi sakti
-                mp[col].back().second.push(node->val);
+            if(mp.find(col)==mp.end() || mp[col].back().second < row){
+                mp[col].push_back({node->val, row});
+            }else{ // if(mp[hd].second == depth) //since we are going level order > wali condition aa hi nhi sakti
+                auto insertPos = mp[col].end();
+                if(mp[col].back().first > node->val){
+                    // mp[hd].insert(mp[hd].end()-1, node->val);
+                    insertPos--;
+                }
+                mp[col].insert(insertPos, {node->val, row});
             }
             q.push({node->left, {row+1, col-1}});
             q.push({node->right, {row+1, col+1}});
         }
         vector<vector<int>> ans;
-        for(auto col: mp){
+        for(auto p: mp){
             vector<int> temp;
-            for(auto rowPQpair: col.second){
-                while(!rowPQpair.second.empty()){
-                    temp.push_back(rowPQpair.second.top());
-                    rowPQpair.second.pop();
-                }
+            for(auto e: p.second){
+                temp.push_back(e.first);
             }
             ans.push_back(temp);
         }
         return ans;
     }
 };
-// Title: Vertical Order Traversal of a Binary Tree
