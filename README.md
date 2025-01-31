@@ -1,112 +1,117 @@
 # 🚀 CyberHack  
-**Team Name: One-Direction**  
+### **Team Name:** One-Direction  
 
-## 🛑 Problem Statement  
-Social engineering frauds often involve the creation of **fake profiles** of prominent individuals on social media. Fraudsters use these profiles to **scam** their friends and followers into transferring money.  
-
-**Our challenge:** Develop a **technical solution** that enables social media platforms to **automatically detect and delete** such fraudulent accounts.  
+## 🏆 Problem Statement  
+Social engineering frauds are on the rise, where scammers create fake profiles of well-known individuals on social media. These fraudsters deceive their victims, often extracting personal data or even money. Our proposed solution is a **Spam Profile Detection Mobile App** that **automatically detects and flags fraudulent accounts** on platforms like Instagram and LinkedIn.  
 
 ---
 
-# 🔍 Truecaller for Social Media  
-## A Spam Profile Detection Mobile App  
+# **🔍 Truecaller for Social Media**  
+## **A Spam Profile Detection Mobile App**  
 
 ### 📌 Overview  
-Our mobile app helps users **detect spam profiles** on Instagram and LinkedIn by analyzing engagement rates and follower-to-following ratios.  
+Our mobile app helps identify spam profiles using **machine learning models**, analyzing **engagement metrics** and **follower-following ratios**. Additionally, it leverages the **Reclaim Protocol** to ensure that users give **explicit consent** before sharing their data. Users who participate in data sharing are **incentivized** with rewards.  
 
-### 🔑 Key Features:  
-✅ **Profile Analysis:** Fetch and analyze user data using APIs and web scraping.  
-✅ **Machine Learning Model:** Classify profiles as spam or legitimate in **real-time**.  
-✅ **User Consent & Incentives:** Integrate **Reclaim Protocol** for data-sharing consent and rewards.  
-✅ **Privacy & Security:** Encrypt data and allow users to revoke consent anytime.  
-✅ **Intuitive UI:** A **dashboard** displaying spam profiles and security scores.  
+📌 **Mindmap of the Application:**  
+![Mindmap](file-8kALZnq9GxYDfwRguXiZa2)  
 
 ---
 
-## 🔍 Core Features  
+## **✨ Core Features**  
 
 ### 📊 **Profile Analysis**  
-- Extract **followers, following, engagement metrics** from Instagram & LinkedIn.  
-- Utilize **platform APIs** and **web scraping techniques**.  
-- Compute **key metrics** such as **engagement rate** and **follower-to-following ratio**.  
-- Use an **ML model** to classify profiles as **spam or legitimate**.  
+✅ Fetches **followers, following, and engagement metrics** from Instagram & LinkedIn.  
+✅ Uses **APIs & Web Scraping** to collect relevant profile data.  
+✅ Computes key indicators like **engagement rate** and **follower-following ratio**.  
+✅ **ML Model-Based Classification** of spam vs. legitimate profiles.  
 
 ### 🔐 **User Consent & Incentivization**  
-- **Reclaim Protocol** ensures user consent before accessing personal data.  
-- **Users receive incentives** (tokens or rewards) for sharing their data.  
+✅ Implements **Reclaim Protocol** for **explicit consent** before data collection.  
+✅ Users are **rewarded** for sharing data.  
 
-### 🤖 **AI-Based Spam Detection**  
-- Train an **ML model** on engagement and network data.  
-- Deploy the model within the app for **real-time spam detection**.  
+### 🤖 **Spam Detection Using Machine Learning**  
+✅ The model is trained on real-world engagement metrics and network data.  
+✅ Provides **real-time classification** of suspicious accounts.  
 
 ### 🛡️ **Privacy & Security**  
-- **Encryption** ensures secure handling of user data.  
-- Users can **revoke consent** and delete shared data anytime.  
+✅ Ensures **data encryption & compliance** with privacy regulations.  
+✅ Users can **revoke consent** and **delete their shared data** anytime.  
 
-### 🎨 **User Interface (UI)**  
-- A **clean and intuitive UI** for easy profile analysis.  
-- **Dashboard** displaying spam profiles and an **account security score**.  
+### 🎨 **User Interface**  
+✅ **Intuitive UI** for easy profile analysis.  
+✅ **Dashboard View** displaying **spam indicators** and **security scores**.  
+
+📌 **Customer Journey Flow Diagram:**  
+![Customer Journey](file-Cwq1bVXV72CdgQ7g43X2kB)  
 
 ---
 
-## 📌 How Spam Profiles Are Detected  
-A **study from ResearchGate** highlights common spam profile characteristics:  
-✔ **Low follower count**  
-✔ **Few or repetitive posts**  
-✔ **Excessive hashtag usage**  
-✔ **Unusual comment & like patterns**  
-✔ **Fake profile picture**  
-✔ **Engagement ratio formula:**  
+## **📌 How Spam Profiles Are Detected**  
 
+Our approach is inspired by findings from the **Systematic Literature Review on Instagram Fake Account Detection Based on Machine Learning** ([ResearchGate Paper](https://www.researchgate.net/publication/358590043_Systematic_Literature_Review_Instagram_Fake_Account_Detection_Based_on_Machine_Learning)).  
+
+Key spam indicators include:  
+✅ **Low engagement despite high followers**  
+✅ **Excessive use of hashtags in posts**  
+✅ **Frequent but meaningless comments**  
+✅ **Unrealistic follower-following ratio**  
+✅ **Absence of a real profile picture**  
+
+📌 **Engagement Ratio Formula:**  
 ```math
 Engagement Rate (%) = [(Likes + Comments) ÷ Followers] × 100
 ```
 
-These parameters help determine if an account is spam.  
+The **ML Model** uses these parameters to classify profiles as **Spam** or **Legitimate**.  
 
 ---
 
-## 🛠️ How It Works  
-
-1️⃣ Users **enter the profile link** of an account to verify.  
-2️⃣ The app **fetches data** using **APIs & web scraping**.  
-3️⃣ **Reclaim Protocol** ensures user **consent for data sharing**.  
-4️⃣ The **ML model** analyzes engagement patterns & labels profiles as **spam or legitimate**.  
+## **🛠️ How User Data Is Collected**  
+🔹 Users input the **profile link** of the account they want to verify.  
+🔹 The app extracts **engagement metrics & network data** via **APIs & Web Scraping**.  
+🔹 The **ML Model** evaluates the profile and classifies it.  
+🔹 **Users are notified** whether the account is spam or not.  
+🔹 **Reclaim Protocol** ensures that data collection is based on **user consent**.  
 
 ---
 
-## 🎁 Incentivization Model  
+## **🎁 Incentivization Model**  
+
+To encourage participation, we offer:  
 
 ### 💰 **Token-Based Rewards System**  
-- Users **earn tokens** for contributing data, analyzing profiles, or referring others.  
-- Tokens can be redeemed for:  
-  - **Premium app features**  
-  - **Digital rewards**  
-  - **Cryptocurrency (if supported)**  
+- Users earn **tokens** for contributing profile data and analyzing profiles.  
+- Tokens can be redeemed for **premium features or digital rewards**.  
+
+### 🎮 **Gamification & Referral Programs**  
+- Leaderboards & reward milestones.  
+- Users receive **bonus tokens** for referring others.  
 
 ---
 
-## 💻 Technology Stack  
+## **💻 Technology Stack**  
 
-### **Frontend**  
-- ⚡ **Capacitor.js**  
-- ⚛ **React.js**  
+### 🎨 **Frontend:**  
+- **Capacitor.js**, **React.js**  
 
-### **Backend**  
-- 🚀 **Node.js** with **Express / Fastify**  
+### 🔧 **Backend:**  
+- **Node.js** with **Express.js/Fastify**  
 
-### **Database**  
-- 🔥 **Firebase**  
+### 🛢️ **Database:**  
+- **Firebase**  
 
-### **Machine Learning**  
-- 🤖 **TensorFlow.js** / **Scikit-learn**  
+### 🤖 **Machine Learning Model:**  
+- **TensorFlow.js / Scikit-learn** for profile classification  
 
-### **API Integrations**  
-- 📡 **Instagram Graph API**  
-- 💼 **LinkedIn API**  
+### 🌐 **API Integrations:**  
+- **Instagram Graph API**, **LinkedIn API**  
 
-### **Data Collection**  
-- 🔗 **APIs & Web Scraping**  
+### 🔗 **Blockchain & Consent Management:**  
+- **Reclaim Protocol** for user authentication and data sharing permissions  
 
-### **Blockchain & Consent Management**  
-- 🔐 **Reclaim Protocol**  
+---
+
+### **🚀 Deployment & Future Enhancements**  
+✔ **Beta release on Google Play Store & Apple App Store**.  
+✔ Expanding detection features to include **Facebook & Twitter**.  
+✔ Adding **real-time alerts** for users when they interact with a spam account.  
