@@ -9,7 +9,10 @@ Social engineering frauds are on the rise, where scammers create fake profiles o
 # **🔍 Truecaller for Social Media**  
 ## **A Spam Profile Detection Mobile App**  
 
-### 📌 Overview  
+### 📌 Overview 
+
+Social media fraud is a growing issue, with fake profiles and engagement manipulation becoming rampant. Among various platforms, Instagram and LinkedIn are the two most affected by fraudulent activities, such as fake influencers, bot-driven engagement, and deceptive professional profiles. These scams mislead users, brands, and recruiters, causing financial and reputational damage.
+
 Our mobile app helps identify spam profiles using **machine learning models**, analyzing **engagement metrics** and **follower-following ratios**. Additionally, it leverages the **Reclaim Protocol** to ensure that users give **explicit consent** before sharing their data. Users who participate in data sharing are **incentivized** with rewards.  
 
 ---
