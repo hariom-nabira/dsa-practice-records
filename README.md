@@ -12,9 +12,6 @@ Social engineering frauds are on the rise, where scammers create fake profiles o
 ### 📌 Overview  
 Our mobile app helps identify spam profiles using **machine learning models**, analyzing **engagement metrics** and **follower-following ratios**. Additionally, it leverages the **Reclaim Protocol** to ensure that users give **explicit consent** before sharing their data. Users who participate in data sharing are **incentivized** with rewards.  
 
-📌 **Mindmap of the Application:**  
-![Mindmap](file-8kALZnq9GxYDfwRguXiZa2)  
-
 ---
 
 ## **✨ Core Features**  
@@ -41,8 +38,6 @@ Our mobile app helps identify spam profiles using **machine learning models**, a
 ✅ **Intuitive UI** for easy profile analysis.  
 ✅ **Dashboard View** displaying **spam indicators** and **security scores**.  
 
-📌 **Customer Journey Flow Diagram:**  
-![Customer Journey](file-Cwq1bVXV72CdgQ7g43X2kB)  
 
 ---
 
@@ -59,8 +54,9 @@ Key spam indicators include:
 
 📌 **Engagement Ratio Formula:**  
 ```math
-Engagement Rate (%) = [(Likes + Comments) ÷ Followers] × 100
+Engagement Rate = [(Likes + Comments) ÷ Followers]×100
 ```
+<br>
 
 The **ML Model** uses these parameters to classify profiles as **Spam** or **Legitimate**.  
 
@@ -110,8 +106,6 @@ To encourage participation, we offer:
 - **Reclaim Protocol** for user authentication and data sharing permissions  
 
 ---
-
-### **🚀 Deployment & Future Enhancements**  
-✔ **Beta release on Google Play Store & Apple App Store**.  
-✔ Expanding detection features to include **Facebook & Twitter**.  
-✔ Adding **real-time alerts** for users when they interact with a spam account.  
+<img class="image-placeholder" src="https://i.imgur.com/5fIX01h_d.webp?maxwidth=1520&amp;fidelity=grand" alt="CyberHack">
+<img class="image-placeholder" src="https://i.imgur.com/w0JUcVp_d.webp?maxwidth=1520&amp;fidelity=grand" alt="CyberHack">
+<img class="image-placeholder" src="https://i.imgur.com/M00pwZ3_d.webp?maxwidth=760&amp;fidelity=grand" alt="Flowc">
